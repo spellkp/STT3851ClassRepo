@@ -7,7 +7,7 @@
 % \usepackage{natbib}
 
 \usecolortheme{rose}
-\setbeamercolor{background canvas}{bg=magenta!16!yellow!90}
+%\setbeamercolor{background canvas}{bg=magenta!16!yellow!90}
 
 \beamertemplategridbackground[1cm]
 
@@ -38,6 +38,27 @@ library(tree)
 library(randomForest)
 library(boot)
 library(xtable)
+library(ggmap)
+housedata <- read.csv("../Data/housedata.csv", 
+                      colClasses = c(id = "character", date = "character", 
+                                     yr_built = "character", zipcode = "factor", grade = "factor"))
+housedata$date <- as.Date(housedata$date, "%Y%m%d")
+housedata$waterfront <- factor(housedata$waterfront, labels = c("No", "Yes"))
+housedata$condition <- factor(housedata$condition, labels = c("poor", "fair", "average", "good", "very good"))
+housedata$yr_renovated <- ifelse(housedata$yr_renovated == 0, housedata$yr_built, housedata$yr_renovated)
+housedata$yr_built <- as.Date(ISOdate(housedata$yr_built, 9, 1))  # Complete Year, Sept 1
+housedata$yr_renovated <- as.Date(ISOdate(housedata$yr_renovated, 9, 1))  # Last renovated Year, Sept 1
+housedata <- housedata[, -1]
+housedataT <- read.csv("../Data/housedataTEST.csv",
+                      colClasses = c(id = "character", date = "character", 
+                                     yr_built = "character", zipcode = "factor", grade = "factor"))
+housedataT$date <- as.Date(housedataT$date, "%Y%m%d")
+housedataT$waterfront <- factor(housedataT$waterfront, labels = c("No", "Yes"))
+housedataT$condition <- factor(housedataT$condition, labels = c("poor", "fair", "average", "good", "very good"))
+housedataT$yr_renovated <- ifelse(housedataT$yr_renovated == 0, housedataT$yr_built, housedataT$yr_renovated)
+housedataT$yr_built <- as.Date(ISOdate(housedataT$yr_built, 9, 1))  # Complete Year, Sept 1
+housedataT$yr_renovated <- as.Date(ISOdate(housedataT$yr_renovated, 9, 1))  # Last renovated Year, Sept 1
+housedataT <- housedataT[, -1]
 @
 
 %-- Column 1 ---------------------------------------------------
@@ -120,7 +141,7 @@ RMSEmod1b <- val.10.foldEM$delta[1]^.5
 %\vspace{0ex}
 \begin{block}{Cross Validated and Pruned Tree}
 %\vspace{0ex}
-<<TREE, echo = FALSE, fig.width = 13, fig.height= 5>>=	  
+<<TREE, echo = FALSE, fig.width = 12, fig.height= 12>>=	  
 options(digits = 7)
 set.seed(21)
 ncTree <- tree(pctfor ~ . , data = train_NCV)
@@ -140,40 +161,17 @@ NCV$EMWpctfor <- predict(EMmod, newdata = NCV)
 
 %-- Block 2-2
 %\vspace{3ex}
-\begin{block}{North Carolina Maps}
-\vspace{-2ex}
-<<NCmap, echo = FALSE, fig.width = 13, fig.height=6.5>>=
-# NCV <- read.csv("../../NCV03-29-13.csv")
-NC_map <- map_data('county', 'north carolina') 
-# Need to force COUNTY to lowercase
-MERGED <- merge(NC_map, NCV, by.x = "subregion", by.y = "countyName")
-# dim(MERGED)
-p2 <- ggplot(data = MERGED, aes(x = long, y = lat, group = group, fill = pctfor)) # set up data
-p3 <- ggplot(data = MERGED, aes(x = long, y = lat, group = group, fill = pctba*100))
-##
-p4 <- ggplot(data = MERGED, aes(x = long, y = lat, group = group, fill = EMWpctfor))
-##
-
-theme_clean <- function(base_size = 12){
-  library(grid)  # need for unit() function
-    theme_grey(base_size) %+replace%
-    theme(
-      axis.title         = element_blank(),
-      axis.text          = element_blank(),
-      panel.background   = element_blank(),
-      panel.grid         = element_blank(),
-      axis.ticks.length  = unit(0, "cm"),
-      axis.ticks.margin  = unit(0.01, "cm"),
-      panel.margin       = unit(c(0,0,0,0), "lines"),
-      plot.margin        = unit(c(0, 0, 0, 0), "lines"),
-      complete = TRUE
-    )
-}
-p2 + geom_polygon(color="white") + scale_fill_gradient2(low = "blue", mid ="grey90", high = "red", midpoint= 50) + coord_map("polyconic") + theme_clean() + labs(fill = "Percent Voting For\nAmendment One")  #+ ggtitle("North Carolina Counties")
-p3 + geom_polygon(color="white") + scale_fill_gradient2(low = "red", mid="grey90", high = "blue", midpoint=16) + coord_map("polyconic") + theme_clean() + labs(fill = "Percent with\nBA/BS degree\nor Higher Degree")  #+ ggtitle("North Carolina Counties")
-p4 + geom_polygon(color="white") + scale_fill_gradient2(low="blue", mid="grey90", high="red", midpoint= 50) + coord_map("polyconic") + theme_clean() + labs(fill = "Prediction of\nPercent Voting For\nAmendment One\nBased on mod1b") # +  ggtitle("North Carolina Counties")
+\begin{block}{King County Real Estate}
+\vspace{0ex}
+<<KCmap, echo = FALSE, fig.width = 12, fig.height = 12>>=
+KingMap <- get_map(location = c(lon = -122.1, lat = 47.48), zoom = 10, source = "google", maptype = "roadmap")
+ggmap(KingMap) +
+  geom_point(aes(x = long, y = lat, color = price), data = housedata,
+ alpha = .2, size = .05) + scale_color_gradient(low = "red", high = "black",limits = c(70000, 8000000)) +
+  ggtitle("Houses Sold in King County, Wa (2014-2015)") + 
+  labs(x = "longitude", y = "latitude")
 @
-\vspace{-2ex}
+\vspace{0ex}
 \end{block}
 \vfill
 
