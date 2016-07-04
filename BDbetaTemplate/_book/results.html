@@ -8,17 +8,10 @@
   <title>Modeling the interest rate charged by the Lending Club</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Modeling the interest rate charged by the <a href="http://www.lendingclub.com/">Lending Club</a>">
-  <meta name="generator" content="bookdown 0.0.63 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.0.54 and GitBook 2.6.7">
 
   <meta property="og:title" content="Modeling the interest rate charged by the Lending Club" />
   <meta property="og:type" content="book" />
-  
-  
-  
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Modeling the interest rate charged by the Lending Club" />
   
   
   
@@ -31,6 +24,7 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -40,7 +34,6 @@ MathJax.Hub.Config({
 <link rel="prev" href="methods.html">
 <link rel="next" href="conclusions.html">
 
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
@@ -135,7 +128,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">3</span> Results</h1>
 <p>The data used to develop the final model includes information on interest rate (<code>IR</code>), amount requested in dollars (<code>AR</code>), monthly income in dollars (<code>MI</code>), number of open credit lines (<code>OCL</code>), number of inquiries in the last six months (<code>IL6M</code>), loan length in months (<code>LL</code>), and a measure of the creditworthiness of the applicant (<code>FICO</code>). There were no missing values in the “cleaned” data, which had 2470 loans. Since the distribution of monthly income was skewed right, a log base 10 transformation was applied to monthly income. Variables were added based on partial regression plots and residual analyses. The linear relationship between the square root of the interest rate and the amount of money requested can be seen in Figure <a href="results.html#fig:fico">3.1</a>.</p>
 <div class="figure"><span id="fig:fico"></span>
-<img src="_main_files/figure-html/fico-1.png" alt="The top panel shows lines obtained from regressing the square root of the interest rate on the amount requested for 36 month loans and the bottom panel shows lines obtained from regressing the square root of the interest rate on the amount requested for 60 month loans.  The points and lines are color coded according to FICO scores.  The FICO score legend is shown on the right side of the Figure.  Higher interest rates generally correspond to lower FICO scores, and the interest rates increase with the dollar amount requested.  Interest rates are generally higher for all levels of FICO scores for 60 month loans versus 36 month loans."  />
+<img src="_main_files/figure-html/fico-1.png" alt="The top panel shows lines obtained from regressing the square root of the interest rate on the amount requested for 36 month loans and the bottom panel shows lines obtained from regressing the square root of the interest rate on the amount requested for 60 month loans.  The points and lines are color coded according to FICO scores.  The FICO score legend is shown on the right side of the Figure.  Higher interest rates generally correspond to lower FICO scores, and the interest rates increase with the dollar amount requested.  Interest rates are generally higher for all levels of FICO scores for 60 month loans versus 36 month loans." width="672" />
 <p class="caption">
 Figure 3.1: The top panel shows lines obtained from regressing the square root of the interest rate on the amount requested for 36 month loans and the bottom panel shows lines obtained from regressing the square root of the interest rate on the amount requested for 60 month loans. The points and lines are color coded according to FICO scores. The FICO score legend is shown on the right side of the Figure. Higher interest rates generally correspond to lower FICO scores, and the interest rates increase with the dollar amount requested. Interest rates are generally higher for all levels of FICO scores for 60 month loans versus 36 month loans.
 </p>
@@ -149,12 +142,12 @@ Figure 3.1: The top panel shows lines obtained from regressing the square root o
 \end{align}
 <p>The variables <code>f(LL)</code>, <code>f(FICO)</code>, and <code>f(AR:LL)</code> are factors for loan length (2 levels 36 months and 60 months), credit score (34 levels), and the interaction between amount requested and the loan length, respectively. The error term <span class="math inline">\(\varepsilon\)</span> is assumed to follow a normal distribution with mean 0 and constant variance. A graph of the residuals versus the fitted model, shown in Figure <a href="results.html#fig:residplot">3.2</a>, shows a constant variance for the majority of the range of the fitted values, suggesting the fitted model satisfies the assumptions required for inferential techniques to work with ordinary least squares.</p>
 <div class="figure"><span id="fig:residplot"></span>
-<img src="_main_files/figure-html/residplot-1.png" alt="Residuals versus fitted model"  />
+<img src="_main_files/figure-html/residplot-1.png" alt="Residuals versus fitted model" width="672" />
 <p class="caption">
 Figure 3.2: Residuals versus fitted model
 </p>
 </div>
-<p>There is a highly statistically significant relationship (<span class="math inline">\(p\)</span>-value <span class="math inline">\(&lt; 0.0001\)</span>) between the square root of interest rate and all of the variables in model (\ref{eq:final}) with the exception of the interaction between the amount requested and the loan length which has a <span class="math inline">\(p\)</span>-value of 0.0305. See Table <a href="results.html#tab:ANOVA">3.1</a> for complete ANOVA results.</p>
+<p>There is a highly statistically significant relationship (<span class="math inline">\(p\)</span>-value <span class="math inline">\(&lt; 0.0001\)</span>) between the square root of interest rate and all of the variables in model (@ref(eq:final)) with the exception of the interaction between the amount requested and the loan length which has a <span class="math inline">\(p\)</span>-value of 0.0305. See Table <a href="results.html#tab:ANOVA">3.1</a> for complete ANOVA results.</p>
 <table>
 <caption><span id="tab:ANOVA">Table 3.1: </span>ANOVA table for the full model fit using ordinary least squares</caption>
 <thead>
@@ -295,17 +288,7 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+
 </body>
 
 </html>
