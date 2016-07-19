@@ -8,7 +8,7 @@
   <title>Modeling the interest rate charged by the Lending Club</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Modeling the interest rate charged by the <a href="http://www.lendingclub.com/">Lending Club</a>">
-  <meta name="generator" content="bookdown 0.0.63 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.0.71 and GitBook 2.6.7">
 
   <meta property="og:title" content="Modeling the interest rate charged by the Lending Club" />
   <meta property="og:type" content="book" />
@@ -137,20 +137,47 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.1</span> Data Collection</h2>
 <p>Data used in this paper was originally downloaded from</p>
 <p><a href="https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv" class="uri">https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv</a></p>
-<p>February 16, 2013, and again April 12, 2016, using the <code>R</code> programming language <span class="citation">(R Core Team <a href="references.html#ref-R-base">2016</a>)</span>. It is not clear from the available information how, from whom, or when the data was collected, nor is it clear what entity or organization did the collecting. Thirty loans were removed that had either questionable values or missing data. Loans were removed when their recorded data conformed to the “Decline Criteria” given at the bottom of the <a href="https://www.lendingclub.com/public/how-we-set-interest-rates.action" class="uri">https://www.lendingclub.com/public/how-we-set-interest-rates.action</a> web page.</p>
+<p>February 16, 2013, and again July 03, 2016, using the <code>R</code> programming language <span class="citation">(R Core Team <a href="#ref-R-base">2016</a>)</span>. It is not clear from the available information how, from whom, or when the data was collected, nor is it clear what entity or organization did the collecting. Thirty loans were removed that had either questionable values or missing data. Loans were removed when their recorded data conformed to the “Decline Criteria” given at the bottom of the <a href="https://www.lendingclub.com/public/how-we-set-interest-rates.action" class="uri">https://www.lendingclub.com/public/how-we-set-interest-rates.action</a> web page.</p>
 </div>
 <div id="exploratory-analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Exploratory Analysis</h2>
-<p>Exploratory analysis was performed by examining contingency tables, density plots, and scatter-plots of the “cleaned” data. The quality of the “cleaned” data was also evaluated for additional discrepancies, and none were noted. To correct the positive skew of monthly income, a base 10 logarithm was applied to monthly income. Added-variable (partial-regression) plots as described in <span class="citation">Fox, Weisberg, and Fox (<a href="references.html#ref-fox2011">2011</a>)</span> were used in the selection of appropriate variables. Diagnostic plots were used to assess different models including Box-Cox transformations on the response variable (interest rate) as described in <span class="citation">Kutner et al. (<a href="references.html#ref-kutner2005">2005</a>)</span>.</p>
+<p>Exploratory analysis was performed by examining contingency tables, density plots, and scatter-plots of the “cleaned” data. The quality of the “cleaned” data was also evaluated for additional discrepancies, and none were noted. To correct the positive skew of monthly income, a base 10 logarithm was applied to monthly income. Added-variable (partial-regression) plots as described in <span class="citation">Fox, Weisberg, and Fox (<a href="#ref-fox2011">2011</a>)</span> were used in the selection of appropriate variables. Diagnostic plots were used to assess different models including Box-Cox transformations on the response variable (interest rate) as described in <span class="citation">Kutner et al. (<a href="#ref-kutner2005">2005</a>)</span>.</p>
 </div>
 <div id="statistical-modeling" class="section level2">
 <h2><span class="header-section-number">2.3</span> Statistical Modeling</h2>
-<p>Standard multivariate regression techniques such as those described in <span class="citation">Fox, Weisberg, and Fox (<a href="references.html#ref-fox2011">2011</a>)</span> and <span class="citation">Kutner et al. (<a href="references.html#ref-kutner2005">2005</a>)</span> were used to develop a model to predict the interest rate of loans awarded by the <a href="http://www.lendingclub.com/">Lending Club</a>.</p>
+<p>Standard multivariate regression techniques such as those described in <span class="citation">Fox, Weisberg, and Fox (<a href="#ref-fox2011">2011</a>)</span> and <span class="citation">Kutner et al. (<a href="#ref-kutner2005">2005</a>)</span> were used to develop a model to predict the interest rate of loans awarded by the <a href="http://www.lendingclub.com/">Lending Club</a>.</p>
 </div>
 <div id="reproducibility" class="section level2">
 <h2><span class="header-section-number">2.4</span> Reproducibility</h2>
-<p>All analyses performed in this paper can be reproduced by running the original <code>.Rmd</code> file with RStudio, assuming the link to the original data remains current and the contents thereof remain unchanged. The <code>R</code> packages <code>car</code> <span class="citation">(Fox and Weisberg <a href="references.html#ref-R-car">2016</a>)</span>, <code>ggplot2</code> <span class="citation">(Wickham and Chang <a href="references.html#ref-R-ggplot2">2016</a>)</span>, <code>knitr</code> <span class="citation">(Xie <a href="references.html#ref-R-knitr">2016</a><a href="references.html#ref-R-knitr">b</a>)</span>, <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="references.html#ref-R-rmarkdown">2016</a>)</span>, and <code>bookdown</code> <span class="citation">(Xie <a href="references.html#ref-R-bookdown">2016</a><a href="references.html#ref-R-bookdown">a</a>)</span> will need to be installed on the user’s computer. Since <code>bookdown</code> is being actively developed and is not yet on <a href="https://cran.r-project.org/">CRAN</a>, you will need to install <code>bookdown</code> from <a href="https://github.com">GitHub</a> by typing the following at the <code>R</code> prompt:</p>
+<p>All analyses performed in this paper can be reproduced by running the original <code>.Rmd</code> file with RStudio, assuming the link to the original data remains current and the contents thereof remain unchanged. The <code>R</code> packages <code>car</code> <span class="citation">(Fox and Weisberg <a href="#ref-R-car">2016</a>)</span>, <code>ggplot2</code> <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2016</a>)</span>, <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2016</a><a href="#ref-R-knitr">b</a>)</span>, <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown">2016</a>)</span>, and <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown">2016</a><a href="#ref-R-bookdown">a</a>)</span> will need to be installed on the user’s computer. Since <code>bookdown</code> is being actively developed and is not yet on <a href="https://cran.r-project.org/">CRAN</a>, you will need to install <code>bookdown</code> from <a href="https://github.com">GitHub</a> by typing the following at the <code>R</code> prompt:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/bookdown&quot;</span>)</code></pre></div>
+</div>
+</div>
+<h3><span class="header-section-number">5</span> References</h3>
+<div id="refs" class="references">
+<div id="ref-R-base">
+<p>R Core Team. 2016. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-fox2011">
+<p>Fox, John, Sanford Weisberg, and John Fox. 2011. <em>An R Companion to Applied Regression</em>. 2nd ed. Thousand Oaks, Calif: SAGE Publications.</p>
+</div>
+<div id="ref-kutner2005">
+<p>Kutner, Michael H, Chris Nachtsheim, John Neter, and William Li. 2005. <em>Applied Linear Statistical Models</em>. Boston: McGraw-Hill Irwin.</p>
+</div>
+<div id="ref-R-car">
+<p>Fox, John, and Sanford Weisberg. 2016. <em>Car: Companion to Applied Regression</em>. <a href="https://CRAN.R-project.org/package=car" class="uri">https://CRAN.R-project.org/package=car</a>.</p>
+</div>
+<div id="ref-R-ggplot2">
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: An Implementation of the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+</div>
+<div id="ref-R-knitr">
+<p>Xie, Yihui. 2016b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-R-bookdown">
+<p>Xie, Yihui. 2016a. <em>Bookdown: Authoring Books with R Markdown</em>. <a href="https://github.com/rstudio/bookdown" class="uri">https://github.com/rstudio/bookdown</a>.</p>
 </div>
 </div>
             </section>
@@ -161,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="results.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
-<script src="libs/gitbook-2.6.7/js/app.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
