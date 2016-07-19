@@ -8,17 +8,14 @@
   <title>Modeling the interest rate charged by the Lending Club</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Modeling the interest rate charged by the <a href="http://www.lendingclub.com/">Lending Club</a>">
+<<<<<<< HEAD
   <meta name="generator" content="bookdown 0.0.71 and GitBook 2.6.7">
+=======
+  <meta name="generator" content="bookdown 0.0.54 and GitBook 2.6.7">
+>>>>>>> 1300557d3075bc3820b9cfe8cb26a3c907b851d1
 
   <meta property="og:title" content="Modeling the interest rate charged by the Lending Club" />
   <meta property="og:type" content="book" />
-  
-  
-  
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Modeling the interest rate charged by the Lending Club" />
   
   
   
@@ -31,6 +28,7 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -40,7 +38,6 @@ MathJax.Hub.Config({
 <link rel="prev" href="introduction.html">
 <link rel="next" href="results.html">
 
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
@@ -137,7 +134,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.1</span> Data Collection</h2>
 <p>Data used in this paper was originally downloaded from</p>
 <p><a href="https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv" class="uri">https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv</a></p>
+<<<<<<< HEAD
 <p>February 16, 2013, and again July 03, 2016, using the <code>R</code> programming language <span class="citation">(R Core Team <a href="#ref-R-base">2016</a>)</span>. It is not clear from the available information how, from whom, or when the data was collected, nor is it clear what entity or organization did the collecting. Thirty loans were removed that had either questionable values or missing data. Loans were removed when their recorded data conformed to the “Decline Criteria” given at the bottom of the <a href="https://www.lendingclub.com/public/how-we-set-interest-rates.action" class="uri">https://www.lendingclub.com/public/how-we-set-interest-rates.action</a> web page.</p>
+=======
+<p>February 16, 2013, and again July 03, 2016, using the <code>R</code> programming language <span class="citation">(R Core Team <a href="references.html#ref-R-base">2015</a>)</span>. It is not clear from the available information how, from whom, or when the data was collected, nor is it clear what entity or organization did the collecting. Thirty loans were removed that had either questionable values or missing data. Loans were removed when their recorded data conformed to the “Decline Criteria” given at the bottom of the <a href="https://www.lendingclub.com/public/how-we-set-interest-rates.action" class="uri">https://www.lendingclub.com/public/how-we-set-interest-rates.action</a> web page.</p>
+>>>>>>> 1300557d3075bc3820b9cfe8cb26a3c907b851d1
 </div>
 <div id="exploratory-analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Exploratory Analysis</h2>
@@ -149,7 +150,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="reproducibility" class="section level2">
 <h2><span class="header-section-number">2.4</span> Reproducibility</h2>
+<<<<<<< HEAD
 <p>All analyses performed in this paper can be reproduced by running the original <code>.Rmd</code> file with RStudio, assuming the link to the original data remains current and the contents thereof remain unchanged. The <code>R</code> packages <code>car</code> <span class="citation">(Fox and Weisberg <a href="#ref-R-car">2016</a>)</span>, <code>ggplot2</code> <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2016</a>)</span>, <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2016</a><a href="#ref-R-knitr">b</a>)</span>, <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown">2016</a>)</span>, and <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown">2016</a><a href="#ref-R-bookdown">a</a>)</span> will need to be installed on the user’s computer. Since <code>bookdown</code> is being actively developed and is not yet on <a href="https://cran.r-project.org/">CRAN</a>, you will need to install <code>bookdown</code> from <a href="https://github.com">GitHub</a> by typing the following at the <code>R</code> prompt:</p>
+=======
+<p>All analyses performed in this paper can be reproduced by running the original <code>.Rmd</code> file with RStudio, assuming the link to the original data remains current and the contents thereof remain unchanged. The <code>R</code> packages <code>car</code> <span class="citation">(Fox and Weisberg <a href="references.html#ref-R-car">2015</a>)</span>, <code>ggplot2</code> <span class="citation">(Wickham and Chang <a href="references.html#ref-R-ggplot2">2016</a>)</span>, <code>knitr</code> <span class="citation">(Xie <a href="references.html#ref-R-knitr">2016</a><a href="references.html#ref-R-knitr">b</a>)</span>, <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="references.html#ref-R-rmarkdown">2016</a>)</span>, and <code>bookdown</code> <span class="citation">(Xie <a href="references.html#ref-R-bookdown">2016</a><a href="references.html#ref-R-bookdown">a</a>)</span> will need to be installed on the user’s computer. Since <code>bookdown</code> is being actively developed and is not yet on <a href="https://cran.r-project.org/">CRAN</a>, you will need to install <code>bookdown</code> from <a href="https://github.com">GitHub</a> by typing the following at the <code>R</code> prompt:</p>
+>>>>>>> 1300557d3075bc3820b9cfe8cb26a3c907b851d1
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/bookdown&quot;</span>)</code></pre></div>
 </div>
 </div>
@@ -224,17 +229,7 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+
 </body>
 
 </html>
