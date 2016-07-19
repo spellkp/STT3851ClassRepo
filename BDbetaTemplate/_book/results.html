@@ -8,14 +8,17 @@
   <title>Modeling the interest rate charged by the Lending Club</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Modeling the interest rate charged by the <a href="http://www.lendingclub.com/">Lending Club</a>">
-<<<<<<< HEAD
-  <meta name="generator" content="bookdown 0.0.71 and GitBook 2.6.7">
-=======
-  <meta name="generator" content="bookdown 0.0.54 and GitBook 2.6.7">
->>>>>>> 1300557d3075bc3820b9cfe8cb26a3c907b851d1
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="Modeling the interest rate charged by the Lending Club" />
   <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Modeling the interest rate charged by the Lending Club" />
   
   
   
@@ -28,7 +31,6 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,6 +40,7 @@ MathJax.Hub.Config({
 <link rel="prev" href="methods.html">
 <link rel="next" href="conclusions.html">
 
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
@@ -151,12 +154,12 @@ Figure 3.1: The top panel shows lines obtained from regressing the square root o
 Figure 3.2: Residuals versus fitted model
 </p>
 </div>
-<p>There is a highly statistically significant relationship (<span class="math inline">\(p\)</span>-value <span class="math inline">\(&lt; 0.0001\)</span>) between the square root of interest rate and all of the variables in model (@ref(eq:final)) with the exception of the interaction between the amount requested and the loan length which has a <span class="math inline">\(p\)</span>-value of 0.0305. See Table <a href="results.html#tab:ANOVA">3.1</a> for complete ANOVA results.</p>
+<p>There is a highly statistically significant relationship (<span class="math inline">\(p\)</span>-value <span class="math inline">\(&lt; 0.0001\)</span>) between the square root of interest rate and all of the variables in model (\ref{eq:final}) with the exception of the interaction between the amount requested and the loan length which has a <span class="math inline">\(p\)</span>-value of 0.0305. See Table <a href="results.html#tab:ANOVA">3.1</a> for complete ANOVA results.</p>
 <table>
 <caption><span id="tab:ANOVA">Table 3.1: </span>ANOVA table for the full model fit using ordinary least squares</caption>
 <thead>
 <tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="right">Df</th>
 <th align="right">Sum Sq</th>
 <th align="right">Mean Sq</th>
@@ -166,7 +169,7 @@ Figure 3.2: Residuals versus fitted model
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Amount.Requested</td>
+<td>Amount.Requested</td>
 <td align="right">1</td>
 <td align="right">88.6195</td>
 <td align="right">88.6195</td>
@@ -174,7 +177,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="even">
-<td align="left">log10(Monthly.Income)</td>
+<td>log10(Monthly.Income)</td>
 <td align="right">1</td>
 <td align="right">16.8119</td>
 <td align="right">16.8119</td>
@@ -182,7 +185,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="odd">
-<td align="left">Open.CREDIT.Lines</td>
+<td>Open.CREDIT.Lines</td>
 <td align="right">1</td>
 <td align="right">1.9664</td>
 <td align="right">1.9664</td>
@@ -190,7 +193,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="even">
-<td align="left">I(Open.CREDIT.Lines^2)</td>
+<td>I(Open.CREDIT.Lines^2)</td>
 <td align="right">1</td>
 <td align="right">5.8905</td>
 <td align="right">5.8905</td>
@@ -198,7 +201,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="odd">
-<td align="left">Inquiries.in.the.Last.6.Months</td>
+<td>Inquiries.in.the.Last.6.Months</td>
 <td align="right">1</td>
 <td align="right">27.9475</td>
 <td align="right">27.9475</td>
@@ -206,7 +209,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="even">
-<td align="left">I(Inquiries.in.the.Last.6.Months^2)</td>
+<td>I(Inquiries.in.the.Last.6.Months^2)</td>
 <td align="right">1</td>
 <td align="right">6.9382</td>
 <td align="right">6.9382</td>
@@ -214,7 +217,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="odd">
-<td align="left">Loan.Length</td>
+<td>Loan.Length</td>
 <td align="right">1</td>
 <td align="right">67.4247</td>
 <td align="right">67.4247</td>
@@ -222,7 +225,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="even">
-<td align="left">FICO.Range</td>
+<td>FICO.Range</td>
 <td align="right">33</td>
 <td align="right">492.6554</td>
 <td align="right">14.9290</td>
@@ -230,7 +233,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0000</td>
 </tr>
 <tr class="odd">
-<td align="left">Amount.Requested:Loan.Length</td>
+<td>Amount.Requested:Loan.Length</td>
 <td align="right">1</td>
 <td align="right">0.2785</td>
 <td align="right">0.2785</td>
@@ -238,7 +241,7 @@ Figure 3.2: Residuals versus fitted model
 <td align="right">0.0305</td>
 </tr>
 <tr class="even">
-<td align="left">Residuals</td>
+<td>Residuals</td>
 <td align="right">2428</td>
 <td align="right">144.2770</td>
 <td align="right">0.0594</td>
@@ -248,7 +251,7 @@ Figure 3.2: Residuals versus fitted model
 </tbody>
 </table>
 </div>
-<h3><span class="header-section-number">5</span> References</h3>
+<h3> References</h3>
 <div id="refs" class="references">
 <div id="ref-fox2011">
 <p>Fox, John, Sanford Weisberg, and John Fox. 2011. <em>An R Companion to Applied Regression</em>. 2nd ed. Thousand Oaks, Calif: SAGE Publications.</p>
@@ -301,7 +304,17 @@ gitbook.start({
 });
 </script>
 
-
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
