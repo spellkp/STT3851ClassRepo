@@ -4,9 +4,9 @@ author: ''
 date: "Spring 2016"
 output:
   html_document:
-    css: "../CSS/style.css"
+    css: asu.css
     highlight: textmate
-    theme: readable
+    theme: cosmo
 ---
 
 **Instructor:**  Dr. Alan T. Arnholt  
