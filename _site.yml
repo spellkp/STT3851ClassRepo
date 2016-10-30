@@ -2,7 +2,11 @@ name: "my-website"
 output_dir: "."
 navbar:
   title: "STT 3851"
-
+  left:
+    - text: "Resources"
+      href: https://alanarnholt.github.io/resources.html
+    - text: "For Students"
+      href: https://alanarnholt.github.io/for-students.html
 
   right:
     - text: "Home Page"
