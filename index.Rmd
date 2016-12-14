@@ -22,7 +22,7 @@ title: "Welcome"
 
 * [Web site for _An Introduction to Statistical Learning_ (free pdf of book)](http://www-bcf.usc.edu/~gareth/ISL/)
 
-* [Course Notes STT 3850 (Spring 2014)](https://github.com/alanarnholt/STT3850/blob/master/Notes/Parent/ParentForPDF.pdf) (Click the `raw` button to download the pdf to your local machine)
+* [Course Notes STT 3850 (Spring 2014)](https://alanarnholt.github.io/STT3850/Notes/Parent/Parent.html) 
 
 ### Chapter 1: Introduction ([slides](https://lagunita.stanford.edu/c4x/HumanitiesScience/StatLearning/asset/introduction.pdf))
 
