@@ -15,7 +15,7 @@ output:
 
 Make an appointment to see me by clicking https://arnholtat.youcanbook.me/.
 
-Questions related to the class should be addressed with the [piazza account for STT 3851](piazza.com/appstate/spring2017/stt/home).
+Questions related to the class should be addressed with the [piazza account for STT 3851](https://piazza.com/appstate/spring2017/stt/home).
 
 
 **Course Description:**  
@@ -55,12 +55,12 @@ This course covers elements of data management, descriptive statistics,  and inf
 
 This term we will be using Piazza for class discussion. The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions to the teaching staff, I encourage you to post your questions on Piazza. If you have any problems or feedback for the developers, email team@piazza.com.
 
-Find our class page at: piazza.com/appstate/spring2017/stt/home
+Find our class page at: https://piazza.com/appstate/spring2017/stt/home
 
 
 **How To Get Unstuck**
 
-If you have a course related question, please ask your question on [piazza]piazza.com/appstate/spring2017/stt/home).  Your classmates may have the same question or may answer your question before I can provide an answer.  Well constructed questions will elicit answers more rapidly than poorly constructed questions.  This [video](https://www.youtube.com/watch?v=ZFaWxxzouCY&list=PLjTlxb-wKvXNSDfcKPFH2gzHGyjpeCZmJ&index=3) provides some background on asking questions.  This stackoverflow thread details how to create a [minimal R reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610). Please read [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html) by Eric Raymond and Rick Moen and heed their advice.
+If you have a course related question, please ask your question on [piazza](https://piazza.com/appstate/spring2017/stt/home).  Your classmates may have the same question or may answer your question before I can provide an answer.  Well constructed questions will elicit answers more rapidly than poorly constructed questions.  This [video](https://www.youtube.com/watch?v=ZFaWxxzouCY&list=PLjTlxb-wKvXNSDfcKPFH2gzHGyjpeCZmJ&index=3) provides some background on asking questions.  This stackoverflow thread details how to create a [minimal R reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610). Please read [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html) by Eric Raymond and Rick Moen and heed their advice.
 
 **University Policies**
 
