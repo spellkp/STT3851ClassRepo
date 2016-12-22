@@ -3,9 +3,9 @@ title: "Welcome"
 ---
 
 
-* The course syllabus is stored in the [`Syllabus`](./Syllabus/STT3851Spring2016Syllabus.html) directory of the STT 3851 repository.
+* The course syllabus is stored in the [`Syllabus`](./Syllabus/STT3851Spring2017Syllabus.html) directory of the STT 3851 repository.
 
-* Course pacing and assignments are stored in the [`Assignments`](./Assignments/AssignmentsSTT3851Spring2016.html) directory of the STT 3851 repository.
+* Course pacing and assignments are stored in the [`Assignments`](./Assignments/AssignmentsSTT3851Spring2017.html) directory of the STT 3851 repository.
 
 * [Class RStudio Server](https://mathr.math.appstate.edu) (you must be registered in the course to access the server)
 
