@@ -95,7 +95,7 @@ output:
 **Feb 14:**
 
 * [Watch Managing Change with RStudio]( https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/) (37 minutes)
-
+* [Reproduce this document]()
 
 
 **Feb 11:**
