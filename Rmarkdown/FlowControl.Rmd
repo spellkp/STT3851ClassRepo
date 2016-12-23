@@ -5,7 +5,7 @@ date: 'Last Updated on: `r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
   html_document:
     highlight: textmate
-    theme: cosmo
+    theme: yeti
 ---
 
 # Flow Control
