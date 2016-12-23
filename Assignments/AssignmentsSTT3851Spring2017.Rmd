@@ -12,18 +12,11 @@ output:
 **Jan 17:**
 
 * Go over syllabus.
-
 * Become familiar with the Appstate [RStudio server](https://mathr.math.appstate.edu/). You will use your Appstate user name and password to log in to the server.  You must be registered in the class to access the server.
-
 * Sign-up for free accounts on [GitHub](https://github.com) and [Rpubs](https://rpubs.com).
-
 * When you register for a free individual GitHub account, request a [student discount](https://education.github.com) to obtain a few private repositories as well as unlimited public repositories.  Please use something similar to **first_name_last_name** as your username when you register with GitHub.  For example, my username on GitHub is *alanarnholt*. If you have a popular name such as John Smith, you may need to provide some other distinquishing characteristic in your username.  Please use the same **username** for your account on Rpubs. 
-
 * Once you have a GitHub account, send an email to arnholtat@appstate.edu with a Subject line of **STT3851 - GitHub Username**, and tell me in the body of your email your first name, last name, and your GitHub username.  I will then manually add you as a team member to the repository in the STAT-ATA-ASU organization that has your name (**Last_name-First_name**).  This repository will be where you store all of your work for this course.  I will also change your repository to a private repository.
-
 * In class lecture: Review of one and two sample inference, permutation tests, and bootstrap procedures --- take notes
-
-
 * Homework: 
     + Watch this [video](https://www.youtube.com/watch?v=ZFaWxxzouCY&list=PLjTlxb-wKvXNSDfcKPFH2gzHGyjpeCZmJ&index=3) which provides some background on asking questions.  
     + Read this stackoverflow thread details how to create a [minimal R reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610). 
@@ -31,20 +24,12 @@ output:
 
 **Jan 19:**
 
-Before class watch the following Videos:
-
-* [Phillip Guo's Unix-like command line tutorials (Four tutorials about 10 minutes each)](http://www.pgbovine.net/command-line-tutorial.htm)
-
-* [Phillip Guo's Basic Git and Github tutorials (Three tutorials about 10 minutes each)](http://www.pgbovine.net/git-tutorial.htm)
-
-* [Clone a GitHub Repo with RStudio (Video)](https://www.youtube.com/watch?v=YxZ8J2rqhEM) (5:05)
-
-
-
+* Before class watch the following Videos:
+    + [Phillip Guo's Unix-like command line tutorials (Four tutorials about 10 minutes each)](http://www.pgbovine.net/command-line-tutorial.htm)
+    + [Phillip Guo's Basic Git and Github tutorials (Three tutorials about 10 minutes each)](http://www.pgbovine.net/git-tutorial.htm)
+    + [Clone a GitHub Repo with RStudio (Video)](https://www.youtube.com/watch?v=YxZ8J2rqhEM) (5:05)
 * In class lecture: Review of one and two sample inference, permutation tests, and bootstrap procedures --- take notes
-
 * [Statistics Review](../Rmarkdown/StatReview.html)
-
 * Quiz #1
 
 
@@ -56,26 +41,19 @@ Before class watch the following Videos:
 **Jan 26:**
 
 * In class lecture: Review of one and two sample inference, permutation tests, and bootstrap procedures --- take notes
-
 * [Statistics Review](../Rmarkdown/StatReview.html)
-
 * [Schistosomiasis](../Rmarkdown/Schistosomiasis.html)
-
 * Update README file in private repository
-
 * Use an avatar or picture on your GitHub account
-
 * Quiz #2
 
 
 **Jan 31:**
 
 * Before class:
-
     + Read chapter 1 ISLR
     + Watch [Opening Remarks and Examples](https://www.youtube.com/watch?v=2wLfFB_6SKI) (18:18)
     + Watch [Supervised and Unsupervised Learning](https://www.youtube.com/watch?v=LvaTokhYnDw) (12:12)
-
 * Lecture - [Rmarkdown example](../Rmarkdown/FlowControl.html)
 * Bootstrap - [Rmarkdown example](../Rmarkdown/TheBootstrap.html)
 * [Overplotting Examples and possible Solutions](../Rmarkdown/HousingData.html)
@@ -86,38 +64,38 @@ Before class watch the following Videos:
 **Feb 2:**
 
 * Before class:
-
     + Read chapter 2 ISLR
     + Watch [Statistical Learning and Regression](https://www.youtube.com/watch?v=WjyuiK5taS8) (11:41)
     + Watch [Curse of Dimensionality and Parametric Models](https://www.youtube.com/watch?v=UvxHOkYQl8g) (11:40)
     + Watch [Assessing Model Accuracy and Bias-Variance Trade-off](https://www.youtube.com/watch?v=VusKAosxxyk) (10:04)
-    
-
 * Lecture - Bias Variance Tradeoff - Take notes
 * Quiz #3
 
-**Feb 2:**
+**Feb 7:**
 
+* Before class: 
+    + Review/read chapter 2 ISLR
+    + Watch [Classification Problems and K-Nearest Neighbors](https://www.youtube.com/watch?v=vVj2itVNku4) (15:37)
+    + Watch [Lab: Introduction to R](https://www.youtube.com/watch?v=jwBgGS_4RQA) (14:12)
 * Lecture - Bias Variance Tradeoff - Take notes
-* [Classification Problems and K-Nearest Neighbors](https://www.youtube.com/watch?v=vVj2itVNku4) (15:37)
-* [Lab: Introduction to R](https://www.youtube.com/watch?v=jwBgGS_4RQA) (14:12)
-* Reproduce [Modified Introduction to R](../Rmarkdown/LabChap2.html) up to but not including the _Additional Graphical and Numerical Summaries_ section.  Submit your html file to [CrowdGrader](https://www.crowdgrader.org/crowdgrader/venues/view_venue/1750) no later than 5 pm Feb 5.
-
-
-**Feb 4:**
-
-* Quiz Chapter 2 Videos/Reading
-* Go over [Bias Variance Graphs](../Rmarkdown/BiasVariance.html) 
-* Go over [Chapter 2 Graphs](../Rmarkdown/Chap2Slides.html)
-* Flexible models and when to use them
-* Reproduce [Modified Introduction to R](../Rmarkdown/LabChap2.html) up to but not including the _Additional Graphical and Numerical Summaries_ section.  Submit your html file to [CrowdGrader](https://www.crowdgrader.org/crowdgrader/venues/view_venue/1750) no later than 5 pm Feb 5.
+* Reproduce [Modified Introduction to R](../Rmarkdown/LabChap2.html) up to but not including the _Additional Graphical and Numerical Summaries_ section.  Submit your html file to [CrowdGrader](	https://www.crowdgrader.org/crowdgrader/venues/view_venue/2743) no later than 5 pm Feb 10.
 
 
 **Feb 9:**
 
+* Before class: 
+    + Review/read chapter 2 ISLR
+* Go over [Bias Variance Graphs](../Rmarkdown/BiasVariance.html) 
+* Go over [Chapter 2 Graphs](../Rmarkdown/Chap2Slides.html)
+* Discuss flexible models and when to use them
+* Reproduce [Modified Introduction to R](../Rmarkdown/LabChap2.html) up to but not including the _Additional Graphical and Numerical Summaries_ section.  Submit your html file to [CrowdGrader](	https://www.crowdgrader.org/crowdgrader/venues/view_venue/2743) no later than 5 pm Feb 10.
+* Quiz #4
+
+
+**Feb 14:**
+
 * [Watch Managing Change with RStudio]( https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/) (37 minutes)
 
-* Reproduce [Modified Introduction to R](../Rmarkdown/LabChap2.html).  Submit your html file to [CrowdGrader](https://www.crowdgrader.org/crowdgrader/venues/view_venue/1821) no later than 5 pm Feb 12.
 
 
 **Feb 11:**
@@ -300,4 +278,4 @@ Watch the following videos:
 10. Rami, Brandon, Khairi
 
 
-#[Home Page](http://stat-ata-asu.github.io/STT3851ClassRepo/) - [Syllabus](http://stat-ata-asu.github.io/STT3851ClassRepo/Syllabus/STT3851Spring2016Syllabus.html) - [Piazza](https://piazza.com/class/ij30tx2hndb4ew)
+#[Home Page](http://stat-ata-asu.github.io/STT3851ClassRepo/) - [Syllabus](http://stat-ata-asu.github.io/STT3851ClassRepo/Syllabus/STT3851Spring2017Syllabus.html) - [Piazza](https://piazza.com/appstate/spring2017/stt/home)
