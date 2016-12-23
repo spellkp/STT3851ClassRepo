@@ -5,8 +5,14 @@ date: 'Last Updated on: `r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
   html_document:
     highlight: textmate
-    theme: cosmo
+    theme: yeti
 ---
+
+```{r, label = "SETUP", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}
+set.seed(123)
+library(knitr)
+knitr::opts_chunk$set(comment = NA,  fig.align = 'center', fig.height = 5, fig.width = 5, warning = FALSE, message = FALSE, tidy.opts=list(blank = TRUE, width.cutoff= 75))
+```
 
 
 Suppose that we wish to invest a fixed sum of money in two financial
@@ -120,7 +126,9 @@ observations from the original data set.
 This approach is illustrated in the Figure below on a simple data set, which
 we call $Z$, that contains only $n = 3$ observations. 
 
-![BG](BootstrapGraph.png)
+```{r, echo = FALSE}
+knitr::include_graphics("BootstrapGraph.png", dpi = 96)
+```
 
 We randomly select $n$
 observations from the data set in order to produce a bootstrap data set,
@@ -172,7 +180,10 @@ Note that the bootstrap density looks very similar to the simulation density of 
 
 ## General Bootstrap Schematic
 
-![GBS](BootstrapPASWR2.png)
+```{r, echo = FALSE}
+knitr::include_graphics("BootstrapPASWR2.png", dpi = 96)
+```
+
 
 ## Using the `boot` package
 

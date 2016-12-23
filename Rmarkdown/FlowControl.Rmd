@@ -8,6 +8,12 @@ output:
     theme: yeti
 ---
 
+```{r, label = "SETUP", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}
+set.seed(123)
+library(knitr)
+knitr::opts_chunk$set(comment = NA,  fig.align = 'center', fig.height = 5, fig.width = 5, warning = FALSE, message = FALSE, tidy.opts=list(blank = TRUE, width.cutoff= 75))
+```
+
 # Flow Control
 
 `R`, like most programming languages, has the ability to control the execution of code with programming statements such as `for`, `while`,`repeat`, and `break`. As an example, consider how `for` is used in to add the values 10, 20, and 30.
