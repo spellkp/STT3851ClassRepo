@@ -35,11 +35,15 @@ output:
 
 **Jan 24:**
 
+* Before class:
+    + Read [Getting used to R, RStudio, and R Markdown](https://ismayc.github.io/rbasics-book/)
 * Follow the directions from [Jenny Bryan's STAT 545](https://stat545-ubc.github.io/git00_index.html) to [Introduce yourself to Git](https://stat545-ubc.github.io/git04_introduce-self-to-git.html), [Make sure you can communicate with GitHub](https://stat545-ubc.github.io/git05_github-connection.html), [Test drive RStudio and GitHub](https://stat545-ubc.github.io/git07_git-github-rstudio.html), and [Cache your GitHub credentials](https://stat545-ubc.github.io/git06_credential-caching.html).
 
 
 **Jan 26:**
 
+* Before class:
+    + [Watch Managing Change with RStudio]( https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/) (37 minutes)
 * In class lecture: Review of one and two sample inference, permutation tests, and bootstrap procedures --- take notes
 * [Statistics Review](../Rmarkdown/StatReview.html)
 * [Schistosomiasis](../Rmarkdown/Schistosomiasis.html)
@@ -57,8 +61,33 @@ output:
 * Lecture - [Rmarkdown example](../Rmarkdown/FlowControl.html)
 * Bootstrap - [Rmarkdown example](../Rmarkdown/TheBootstrap.html)
 * [Overplotting Examples and possible Solutions](../Rmarkdown/HousingData.html)
-* Directory structure and cloning the organization repository
 
+* Clone the repository to your local machine using RStudio by following these instructions:
+
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the repository.
+2. Copy the clone URL to the clipboard.
+3. Click `File > New Project > Version Control > Git`
+4. Paste the clone URL (`https://github.com/YourUserName/STAT-ATA-ASU/STT3851ClassRepo.git`) in the `Repository URL:` box.
+5. Type a name (suggestion `UserNameSTT3851`) in the `Project directory name:` box.
+6. Change if needed the location in the `Create project as subdirectory of:` box.
+7. Click the `Create Project` box.  You should now have a local copy of the forked repository on your local machine.  Congratulations!  
+* Set the upstream remote in your fork to this repository with the command
+```
+git remote add upstream https://github.com/STAT-ATA-ASU/STT3851ClassRepo.git
+```
+* Verify with
+```
+git remote -v
+```
+* To obtain updates from the upstream repository type
+```
+git pull upstream master
+```
+* If the upstream repository is using `gh-pages`, use `gh-pages` instead of `master` to obtain updates.
+```
+git pull upstream gh-pages
+```
+* If there are conflicts, you will need to resolve them before proceeding.
 
 
 **Feb 2:**
@@ -94,14 +123,16 @@ output:
 
 **Feb 14:**
 
-* [Watch Managing Change with RStudio]( https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/) (37 minutes)
-* [Reproduce this document]()
+* Before class:
+    + Skim [_bookdown: Authoring Books and Technical Documents with R Markdown_](https://bookdown.org/yihui/bookdown/)
+* Reproduce [Writing Assignment](../Rmarkdown/WritingAssignment.html).  Submit your html file to [CrowdGrader]() no later than 5 pm Feb 17.
 
 
-**Feb 11:**
+**Feb 16:**
 
-* Quiz over Managing Change with RStudio
 * Work Day
+* Reproduce [Writing Assignment](../Rmarkdown/WritingAssignment.html).  Submit your html file to [CrowdGrader]() no later than 5 pm Feb 17.
+* Quiz #5
 
 **Feb 16:**
 

@@ -119,7 +119,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Assignments STT 3851 - Spring 2017</h1>
 <h4 class="author"><em>Alan T. Arnholt</em></h4>
-<h4 class="date"><em>Last Updated on: Dec 23, 2016 at 15:33:49</em></h4>
+<h4 class="date"><em>Last Updated on: Dec 23, 2016 at 16:32:41</em></h4>
 
 </div>
 
@@ -154,10 +154,18 @@ $(document).ready(function () {
 </ul>
 <p><strong>Jan 24:</strong></p>
 <ul>
+<li>Before class:
+<ul>
+<li>Read <a href="https://ismayc.github.io/rbasics-book/">Getting used to R, RStudio, and R Markdown</a></li>
+</ul></li>
 <li>Follow the directions from <a href="https://stat545-ubc.github.io/git00_index.html">Jenny Bryan’s STAT 545</a> to <a href="https://stat545-ubc.github.io/git04_introduce-self-to-git.html">Introduce yourself to Git</a>, <a href="https://stat545-ubc.github.io/git05_github-connection.html">Make sure you can communicate with GitHub</a>, <a href="https://stat545-ubc.github.io/git07_git-github-rstudio.html">Test drive RStudio and GitHub</a>, and <a href="https://stat545-ubc.github.io/git06_credential-caching.html">Cache your GitHub credentials</a>.</li>
 </ul>
 <p><strong>Jan 26:</strong></p>
 <ul>
+<li>Before class:
+<ul>
+<li><a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/">Watch Managing Change with RStudio</a> (37 minutes)</li>
+</ul></li>
 <li>In class lecture: Review of one and two sample inference, permutation tests, and bootstrap procedures — take notes</li>
 <li><a href="../Rmarkdown/StatReview.html">Statistics Review</a></li>
 <li><a href="../Rmarkdown/Schistosomiasis.html">Schistosomiasis</a></li>
@@ -175,8 +183,29 @@ $(document).ready(function () {
 </ul></li>
 <li>Lecture - <a href="../Rmarkdown/FlowControl.html">Rmarkdown example</a></li>
 <li>Bootstrap - <a href="../Rmarkdown/TheBootstrap.html">Rmarkdown example</a></li>
-<li><a href="../Rmarkdown/HousingData.html">Overplotting Examples and possible Solutions</a></li>
-<li>Directory structure and cloning the organization repository</li>
+<li><p><a href="../Rmarkdown/HousingData.html">Overplotting Examples and possible Solutions</a></p></li>
+<li><p>Clone the repository to your local machine using RStudio by following these instructions:</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><a href="https://help.github.com/articles/fork-a-repo/">Fork</a> the repository.</li>
+<li>Copy the clone URL to the clipboard.</li>
+<li>Click <code>File &gt; New Project &gt; Version Control &gt; Git</code></li>
+<li>Paste the clone URL (<code>https://github.com/YourUserName/STAT-ATA-ASU/STT3851ClassRepo.git</code>) in the <code>Repository URL:</code> box.</li>
+<li>Type a name (suggestion <code>UserNameSTT3851</code>) in the <code>Project directory name:</code> box.</li>
+<li>Change if needed the location in the <code>Create project as subdirectory of:</code> box.</li>
+<li>Click the <code>Create Project</code> box. You should now have a local copy of the forked repository on your local machine. Congratulations!<br />
+</li>
+</ol>
+<ul>
+<li><p>Set the upstream remote in your fork to this repository with the command</p>
+<pre><code>git remote add upstream https://github.com/STAT-ATA-ASU/STT3851ClassRepo.git</code></pre></li>
+<li><p>Verify with</p>
+<pre><code>git remote -v</code></pre></li>
+<li><p>To obtain updates from the upstream repository type</p>
+<pre><code>git pull upstream master</code></pre></li>
+<li><p>If the upstream repository is using <code>gh-pages</code>, use <code>gh-pages</code> instead of <code>master</code> to obtain updates.</p>
+<pre><code>git pull upstream gh-pages</code></pre></li>
+<li><p>If there are conflicts, you will need to resolve them before proceeding.</p></li>
 </ul>
 <p><strong>Feb 2:</strong></p>
 <ul>
@@ -215,13 +244,17 @@ $(document).ready(function () {
 </ul>
 <p><strong>Feb 14:</strong></p>
 <ul>
-<li><a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/">Watch Managing Change with RStudio</a> (37 minutes)</li>
-<li><a href>Reproduce this document</a></li>
-</ul>
-<p><strong>Feb 11:</strong></p>
+<li>Before class:
 <ul>
-<li>Quiz over Managing Change with RStudio</li>
+<li>Skim <a href="https://bookdown.org/yihui/bookdown/"><em>bookdown: Authoring Books and Technical Documents with R Markdown</em></a></li>
+</ul></li>
+<li>Reproduce <a href="../Rmarkdown/WritingAssignment.html">Writing Assignment</a>. Submit your html file to <a href>CrowdGrader</a> no later than 5 pm Feb 17.</li>
+</ul>
+<p><strong>Feb 16:</strong></p>
+<ul>
 <li>Work Day</li>
+<li>Reproduce <a href="../Rmarkdown/WritingAssignment.html">Writing Assignment</a>. Submit your html file to <a href>CrowdGrader</a> no later than 5 pm Feb 17.</li>
+<li>Quiz #5</li>
 </ul>
 <p><strong>Feb 16:</strong></p>
 <ul>
