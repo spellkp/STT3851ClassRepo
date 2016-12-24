@@ -200,7 +200,7 @@ git pull upstream gh-pages
     + Watch [K-fold Cross-Validation](https://www.youtube.com/watch?v=nZAM5OXrktY) (13:33)
     + Watch [Cross-Validation: The Right and Wrong Ways](https://www.youtube.com/watch?v=S06JpVoNaA0) (10:07)
 
-* Discuss [Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.pdf)
+* Discuss [Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.html)
 * Quiz #9
 
 
@@ -211,7 +211,7 @@ git pull upstream gh-pages
     + Read/re-read chapter 5 [ISLR](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf)
     + Watch [Lab: Cross-Validation](https://www.youtube.com/watch?v=6dSXlqHAoMk) (11:21)
 
-* Discuss [Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.pdf)
+* Discuss [Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.html)
 * [Reproduce _Lab: Cross-Validation_](../Rmarkdown/LabCrossValidation.html)
 
 
