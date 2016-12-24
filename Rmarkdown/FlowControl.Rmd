@@ -4,6 +4,7 @@ author: "Probability and Statistics with R, Second Edition"
 date: 'Last Updated on: `r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
   html_document:
+    css: ../CSS/asu.css
     highlight: textmate
     theme: yeti
 ---

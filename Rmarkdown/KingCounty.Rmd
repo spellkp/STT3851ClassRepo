@@ -2,7 +2,11 @@
 title: "King County Housing Data"
 author: "Alan Arnholt"
 date: '`r format(Sys.time(), "%B %d, %Y")`'
-output: html_document
+output:
+  html_document:
+    css: ../CSS/asu.css
+    highlight: textmate
+    theme: yeti
 ---
 
 ```{r, label = "SETUP", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}

@@ -1,10 +1,12 @@
 ---
 title: "Credit Problem--More"
 author: "Alan Arnholt"
-date: "4/06/2016"
-output: 
-    html_document:
-      code_folding: hide
+date: 'Last updated: `r format(Sys.time(), "%b %d, %Y")`'
+output:
+  html_document:
+    css: ../CSS/asu.css
+    highlight: textmate
+    theme: yeti
 ---
 
 ```{r, label = "SETUP", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}

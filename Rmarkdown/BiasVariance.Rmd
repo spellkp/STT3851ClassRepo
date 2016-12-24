@@ -2,7 +2,11 @@
 title: "Bias Variance Tradeoff"
 author: "Alan Arnholt"
 date: 'Last Updated on: `r format(Sys.time(), "%b %d, %Y at %X")`'
-output: html_document
+output:
+  html_document:
+    css: ../CSS/asu.css
+    highlight: textmate
+    theme: yeti
 ---
 
 ```{r, label = "SETUP", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}

@@ -1,8 +1,12 @@
 ---
 title: "Plotting With a PNG Background"
 author: "Alan Arnholt"
-date: "2/9/2016"
-output: html_document
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+output:
+  html_document:
+    css: ../CSS/asu.css
+    highlight: textmate
+    theme: yeti
 ---
 
 ```{r, label = "gg", fig.width = 8, fig.height = 4}
