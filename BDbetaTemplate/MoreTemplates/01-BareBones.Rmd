@@ -6,17 +6,18 @@ bibliography:
 - ./BIB/CV.bib
 - ./BIB/TemplateRefs.bib
 - ./BIB/PackagesUsed.bib
-knit: "bookdown::render_book"
 output:
   bookdown::html_document2:
-  self_contained: TRUE
-link-citations: yes
+    highlight: textmate
+    theme: yeti
 ---
 
 ```{r, label = "setup", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}
 library(knitr)
 library(ggplot2)
 library(car)
+library(knitr)
+knitr::opts_chunk$set(comment = NA, fig.align = 'center', fig.height = 5, fig.width = 5, prompt = FALSE, highlight = TRUE, tidy = FALSE, warning = FALSE, message = FALSE, tidy.opts=list(blank = TRUE, width.cutoff = 80))
 ```
 
 # Introduction {#introduction}
@@ -26,8 +27,8 @@ The [Lending Club](http://www.lendingclub.com/) @leader says it uses technology 
 
 Modeling the relationship between interest rate and other recorded data allows the reader to gain an understanding behind the so called "proprietary model" used by the [Lending Club](http://www.lendingclub.com/) to set interest rates for the loans it administers.  The analysis and model used in this paper suggest that the interest rate charged by the [Lending Club](http://www.lendingclub.com/)  is indeed related to the amount and the length of the loan.  Individuals with identical FICO scores can use the model in this paper to predict the interest rate the [Lending Club](http://www.lendingclub.com/) would charge them based on a combination of the applicant's monthly income, open credit lines, and inquiries in the last six months.
 
-```{r, label = "coolpic", fig.align='center', echo=FALSE}
-knitr::include_graphics('images/LendingClub.png')
+```{r, label = "coolpic", fig.align = 'center', echo = FALSE}
+knitr::include_graphics('images/LendingClub.png', dpi = 126)
 ```
 
 # Methods {#methods}
