@@ -187,11 +187,6 @@ git pull upstream gh-pages
 * Commit your final changes for Project 1 to your private repository and email the instructor your SHA prior to 10am March 22, 2016.  Use the subject line "Project 1-STT3851-Last_name First_name-SHA#" in your email.
 
 
-
-**Mar 23:**
-
-* Work on Chapter 3 Assessment - due no later than 10am March 18, 2016 - The chapter 3 Assessment will be recorded as both a quiz grade and a midterm grade. 
-
 **Mar 23:**
 
 * Before class:
@@ -222,8 +217,8 @@ git pull upstream gh-pages
     + [Forward Stepwise Selection](https://www.youtube.com/watch?v=nLpJd_iKmrE) (12:26)
     + [Backward Stepwise Selection ](https://www.youtube.com/watch?v=NJhMSpI2Uj8) (5:26)
 
-* [Finish Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.pdf)
-* Complete [Reproduce _Lab: Cross-Validation_](../Rmarkdown/LabCrossValidation.html).  Submit your html file to [CrowdGrader](	) no later than 5 pm March 31.
+* [Finish Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.html)
+* Complete [Reproduce _Lab: Cross-Validation_](../Rmarkdown/LabCrossValidation.html).  Submit your html file to [CrowdGrader]() no later than 5 pm March 31.
 
 Start Project 2 
 
