@@ -8,7 +8,7 @@
   <title>Modeling the interest rate charged by the Lending Club</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Modeling the interest rate charged by the <a href="http://www.lendingclub.com/">Lending Club</a>">
-  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
 
   <meta property="og:title" content="Modeling the interest rate charged by the Lending Club" />
   <meta property="og:type" content="book" />
@@ -26,11 +26,6 @@
 <meta name="author" content="Alan Arnholt">
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -137,7 +132,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.1</span> Data Collection</h2>
 <p>Data used in this paper was originally downloaded from</p>
 <p><a href="https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv" class="uri">https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv</a></p>
-<p>February 16, 2013, and again July 19, 2016, using the <code>R</code> programming language <span class="citation">(R Core Team <a href="#ref-R-base">2016</a>)</span>. It is not clear from the available information how, from whom, or when the data was collected, nor is it clear what entity or organization did the collecting. Thirty loans were removed that had either questionable values or missing data. Loans were removed when their recorded data conformed to the “Decline Criteria” given at the bottom of the <a href="https://www.lendingclub.com/public/how-we-set-interest-rates.action" class="uri">https://www.lendingclub.com/public/how-we-set-interest-rates.action</a> web page.</p>
+<p>February 16, 2013, and again December 28, 2016, using the <code>R</code> programming language <span class="citation">(R Core Team <a href="#ref-R-base">2016</a>)</span>. It is not clear from the available information how, from whom, or when the data was collected, nor is it clear what entity or organization did the collecting. Thirty loans were removed that had either questionable values or missing data. Loans were removed when their recorded data conformed to the “Decline Criteria” given at the bottom of the <a href="https://www.lendingclub.com/public/how-we-set-interest-rates.action" class="uri">https://www.lendingclub.com/public/how-we-set-interest-rates.action</a> web page.</p>
 </div>
 <div id="exploratory-analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Exploratory Analysis</h2>
@@ -168,7 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Fox, John, and Sanford Weisberg. 2016. <em>Car: Companion to Applied Regression</em>. <a href="https://CRAN.R-project.org/package=car" class="uri">https://CRAN.R-project.org/package=car</a>.</p>
 </div>
 <div id="ref-R-ggplot2">
-<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: An Implementation of the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
 </div>
 <div id="ref-R-knitr">
 <p>Xie, Yihui. 2016b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
@@ -177,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 <div id="ref-R-bookdown">
-<p>Xie, Yihui. 2016a. <em>Bookdown: Authoring Books with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
+<p>Xie, Yihui. 2016a. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 </div>
             </section>
@@ -199,6 +194,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "google": false,

@@ -218,7 +218,7 @@ git pull upstream gh-pages
     + [Backward Stepwise Selection ](https://www.youtube.com/watch?v=NJhMSpI2Uj8) (5:26)
 
 * [Finish Cross-Validation Hand Out](../Rmarkdown/Cross-ValidationInClassHO.html)
-* Complete [Reproduce _Lab: Cross-Validation_](../Rmarkdown/LabCrossValidation.html).  Submit your html file to [CrowdGrader]() no later than 5 pm March 31.
+* Complete [Reproduce _Lab: Cross-Validation_](../Rmarkdown/LabCrossValidation.html).  Submit your html file to [CrowdGrader](https://www.crowdgrader.org/crowdgrader/venues/view_venue/2753) no later than 5 pm March 31.
 
 Start Project 2 
 
@@ -226,92 +226,69 @@ Start Project 2
 * Use the [housedata.csv](https://github.com/STAT-ATA-ASU/STT3851Spring2016/raw/gh-pages/Data/housedata.csv) file - See [King County Housing Data](../Rmarkdown/KingCounty.html)
 * Quiz 10
 
-**Apr 5:**
+**Apr 4:**
 
+* Before class:
+    + Watch [Estimating Test Error Using Mallow’s Cp, AIC, BIC, Adjusted R-squared](https://www.youtube.com/watch?v=LkifE44myLc) (14:06)
+    + Watch [Estimating Test Error Using Cross-Validation](https://www.youtube.com/watch?v=3p9JNaJCOb4) (8:43)
 * [Notes on Credit Problem](../Rmarkdown/CreditProblemMore.html)
 
-Watch the following videos:
 
-* [Estimating Test Error Using Mallow’s Cp, AIC, BIC, Adjusted R-squared](https://www.youtube.com/watch?v=LkifE44myLc) (14:06)
-* [Estimating Test Error Using Cross-Validation](https://www.youtube.com/watch?v=3p9JNaJCOb4) (8:43)
+**Apr 6:**
 
-
-
-**Apr 7:**
-
-* Quiz - Section 6.1 ISLR
-
-Watch the following videos:
-
-* [Shrinkage Methods and Ridge Regression](https://www.youtube.com/watch?v=cSKzqb0EKS0) (12:37)
-* [The Lasso](https://www.youtube.com/watch?v=A5I1G1MfUmA) (15:21)
-* [Tuning Parameter Selection for Ridge Regression and Lasso](https://www.youtube.com/watch?v=xMKVUstjXBE) (5:27)
-
-
-**Apr 12:**
-
-* Using [Book Down](https://bookdown.org/yihui/bookdown/)
-* [Example Template Directory](https://github.com/STAT-ATA-ASU/STT3851Spring2016/blob/gh-pages/BDbetaTemplate)
-* [Example Paper](../BDbetaTemplate/MoreTemplates/main.html)
-* Use the [housedata.csv](https://github.com/STAT-ATA-ASU/STT3851Spring2016/raw/gh-pages/Data/housedata.csv) file - See [King County Housing Data](../Rmarkdown/KingCounty.html)
+* Before class:
+    + Watch [Shrinkage Methods and Ridge Regression](https://www.youtube.com/watch?v=cSKzqb0EKS0) (12:37)
+    + Watch [The Lasso](https://www.youtube.com/watch?v=A5I1G1MfUmA) (15:21)
+    + Watch [Tuning Parameter Selection for Ridge Regression and Lasso](https://www.youtube.com/watch?v=xMKVUstjXBE) (5:27)
+* Quiz #11
 
 
 
-Watch the following videos:
+**Apr 11:**
 
-* [Dimension Reduction](https://www.youtube.com/watch?v=QlyROnAjnEk) (4:45)
-* [Principal Components Regression and Partial Least Squares ](https://www.youtube.com/watch?v=eYxwWGJcOfw) (15:48)
-* [Lab: Best Subset Selection](https://www.youtube.com/watch?v=3kwdDGnV8MM) (10:36)
-* [Lab: Forward Stepwise Selection and Model Selection Using Validation Set](https://www.youtube.com/watch?v=mv-vdysZIb4) (10:32)
-* [Lab: Model Selection Using Cross-Validation](https://www.youtube.com/watch?v=F8MMHCCoALU) (5:32)
-* [Lab: Ridge Regression and Lasso ](https://www.youtube.com/watch?v=1REe3qSotx8) (16:34)
+* Before class review [Book Down](https://bookdown.org/yihui/bookdown/)
+* Before class 
+    + Watch [Dimension Reduction](https://www.youtube.com/watch?v=QlyROnAjnEk) (4:45)
+    + Watch [Principal Components Regression and Partial Least Squares ](https://www.youtube.com/watch?v=eYxwWGJcOfw) (15:48)
+    + Watch [Lab: Best Subset Selection](https://www.youtube.com/watch?v=3kwdDGnV8MM) (10:36)
+    + Watch [Lab: Forward Stepwise Selection and Model Selection Using Validation Set](https://www.youtube.com/watch?v=mv-vdysZIb4) (10:32)
+    + Watch [Lab: Model Selection Using Cross-Validation](https://www.youtube.com/watch?v=F8MMHCCoALU) (5:32)
+    + Watch [Lab: Ridge Regression and Lasso ](https://www.youtube.com/watch?v=1REe3qSotx8) (16:34)
 
-**Apr 14:**
+**Apr 13:**
 
 * Work on Project 2
 * Work on _Lab: Subset Selection Methods_
+* Quiz #12
 
-**Apr 19:**
+**~~Apr 17-18:~~ No Class - State Holidays**
+
+**Apr 20:**
 
 * Work on Project 2
 * Work on _Lab: Ridge Regression and the Lasso_
 
-**Apr 21:**
+**Apr 25:**
 
-* Turn in Project 2 - NLT April 22, 10 am
+* Turn in Project 2 - NLT April 26, 10 am
 * [CrowdGrader link](	https://www.crowdgrader.org/crowdgrader/venues/view_venue/2028)
 * Make sure a single `.Rmd` with the sections outlined in the [Example Paper](../BDbetaTemplate/MoreTemplates/main.html) is in your `Project2` directory under your private course repository.  This is 10% of the assignment grade.
 * Send an email to the instructor using a subject of "House Data Predictions" with an attached vector (csv file) of your predictions using the data set `housedataTEST.csv`.  Note: your vector should contain 4229 predictions. 
 
-**Apr 26:**
+**Apr 27:**
 
 * [Poster Template Directory](https://github.com/STAT-ATA-ASU/STT3851Spring2016/tree/gh-pages/Poster)
-* Work on Poster
+* Work on Presentation
+* Quiz #13
 
-**Apr 28:**
+**May 2:**
 
-* Work on Poster
-
-**May 3:**
-
-* Work on Poster
+* Work on Presentation
 
 **May 11:**
 
-* Final - Present Poster 12-2:30
+* Final - Presentations 9:00-11:30
 
-### Poster Groups:
-
-1.  AmandaLake, Kelly, Will
-2.  Mara, Tori, Tanner
-3.  Hannah, Tucker, Andrew
-4.  Ben (A), Cecily, Ollie
-5.  Alexis, Sana, Stephen (C)
-6.  Ben (J), Mary, Ronnie
-7.  Zach, Hunter, Brad
-8.  Kevin, Steven (K), Austin   
-9.  Clark, Michael, Jamie
-10. Rami, Brandon, Khairi
 
 
 #[Home Page](http://stat-ata-asu.github.io/STT3851ClassRepo/) - [Syllabus](http://stat-ata-asu.github.io/STT3851ClassRepo/Syllabus/STT3851Spring2017Syllabus.html) - [Piazza](https://piazza.com/appstate/spring2017/stt/home)
