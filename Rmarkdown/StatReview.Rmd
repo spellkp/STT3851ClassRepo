@@ -1,10 +1,9 @@
 ---
 title: "Statistics Review"
 author: "Alan Arnholt"
-date: 'Last Updated on: `r Sys.Date()`'
+date: 'Last Updated on: `r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
-  html_document:
-    css: ../CSS/asu.css
+  bookdown::html_document2:
     highlight: textmate
     theme: yeti
 ---
@@ -15,8 +14,11 @@ library(knitr)
 knitr::opts_chunk$set(comment = NA,  fig.align = 'center', fig.height = 5, fig.width = 5, warning = FALSE, message = FALSE, tidy.opts=list(blank = TRUE, width.cutoff= 75))
 ```
 
+# Notation
 
-Notation: $X \sim N(\mu_X, \sigma_X)$ and $Y \sim N(\mu_Y, \sigma_Y)$
+```{definition, label = "notation", name = "General Notation"}
+$X \sim N(\mu_X, \sigma_X)$ and $Y \sim N(\mu_Y, \sigma_Y)$
+```
 
 ```{r}
 # Standard Nomal
@@ -25,15 +27,22 @@ curve(dnorm(x), -3.5, 3.5)
 
 ## Z-score
 
-$Z = \frac{\text{stat} - \mu_{\text{stat}}}{\sigma_{\text{stat}}} \sim N(0, 1)$
+```{definition, label = "zscore", name = "Z-score"}
 
+$Z = \frac{\text{stat} - \mu_{\text{stat}}}{\sigma_{\text{stat}}} \sim N(0, 1)$
+```
+
+```{example}
 Suppose $n = 1$ and $X \sim N(100, 10) \rightarrow \bar{X} \sim N(100, 10)$.
+```
 
 ## Normal distribution
 
 $f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{-(x - \mu)^2}{2\sigma^2}}$
 
+```{example, label = "ex1"}
 Given $X \sim(100, 10)$, find $P(X \geq 120)$.
+```
 
 ```{r}
 MU <- 100
@@ -94,7 +103,7 @@ curve(dnorm(x), from = -4, to = 4, n = 500, col = "pink", add = TRUE)
 
 ## Randomization test
 
-#### Distribute Cards and go through example before this code
+#### Distribute Cards and go through example before this code {-}
 
 ```{r}
 obsDIFF <- diff(tapply(CALCULUS$score, CALCULUS$calculus, mean))
