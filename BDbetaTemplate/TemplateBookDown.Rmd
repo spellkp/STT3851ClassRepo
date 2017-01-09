@@ -168,7 +168,7 @@ The final model used was
 \begin{align}
 \sqrt{\text{IR}} &= \beta_0 + \beta_1 \text{AR} + \beta_2 \text{log10(MI)} + \beta_3 \text{OCL} + \beta_4 \text{OCL}^2 + \beta_5 \text{IL6M} \nonumber \\
 &\qquad{} + \beta_6 \text{IL6M}^2 + \beta_7 \text{f(LL)} + \beta_8 \text{f(FICO)} + \beta_9 \text{f(AR:LL)} + \varepsilon
-\label{eq:final}
+(\#eq:final)
 \end{align}
 
 
@@ -187,7 +187,7 @@ ggplot(data = GG, aes(x = .fitted, y = .resid)) +
 ```
 
 
-There is a highly statistically significant relationship ($p$-value $< 0.0001$) between the square root of interest rate and all of the variables in model (\@ref(eq:final)) with the exception of the interaction between the amount requested and the loan length which has a $p$-value of `r round(summary(mod8)$coef[42,4],4)`.  See Table \@ref(tab:ANOVA) for complete ANOVA results.
+There is a highly statistically significant relationship ($p$-value $< 0.0001$) between the square root of interest rate and all of the variables in model \@ref(eq:final) with the exception of the interaction between the amount requested and the loan length which has a $p$-value of `r round(summary(mod8)$coef[42,4],4)`.  See Table \@ref(tab:ANOVA) for complete ANOVA results.
 
 ```{r, label = "ANOVA", echo = FALSE}
 kable(
