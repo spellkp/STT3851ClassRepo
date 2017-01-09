@@ -21,6 +21,7 @@ output:
     + Watch this [video](https://www.youtube.com/watch?v=ZFaWxxzouCY&list=PLjTlxb-wKvXNSDfcKPFH2gzHGyjpeCZmJ&index=3) which provides some background on asking questions.  
     + Read this stackoverflow thread details how to create a [minimal R reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610). 
     + Read [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html) by Eric Raymond and Rick Moen and heed their advice.
+    + Read [Getting used to R, RStudio, and R Markdown](https://ismayc.github.io/rbasics-book/)
 
 **Jan 19:**
 
@@ -31,13 +32,16 @@ output:
 * In class lecture: Review of one and two sample inference, permutation tests, and bootstrap procedures --- take notes
 * [Statistics Review](../Rmarkdown/StatReview.html)
 * Quiz #1
+* Read Chapters 1-2 of [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
 
 
 **Jan 24:**
 
 * Before class:
-    + Read [Getting used to R, RStudio, and R Markdown](https://ismayc.github.io/rbasics-book/)
+    + Read/review [Getting used to R, RStudio, and R Markdown](https://ismayc.github.io/rbasics-book/)
+    + Read the [Git and GitHub](http://r-pkgs.had.co.nz/git.html) chapter from Hadley Wickham's book [R Packages](http://r-pkgs.had.co.nz/)
 * Follow the directions from [Jenny Bryan's STAT 545](https://stat545-ubc.github.io/git00_index.html) to [Introduce yourself to Git](https://stat545-ubc.github.io/git04_introduce-self-to-git.html), [Make sure you can communicate with GitHub](https://stat545-ubc.github.io/git05_github-connection.html), [Test drive RStudio and GitHub](https://stat545-ubc.github.io/git07_git-github-rstudio.html), and [Cache your GitHub credentials](https://stat545-ubc.github.io/git06_credential-caching.html).
+* Read/review Chapters 1-2 of [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
 
 
 **Jan 26:**
@@ -58,6 +62,7 @@ output:
     + Read chapter 1 [ISLR](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf)
     + Watch [Opening Remarks and Examples](https://www.youtube.com/watch?v=2wLfFB_6SKI) (18:18)
     + Watch [Supervised and Unsupervised Learning](https://www.youtube.com/watch?v=LvaTokhYnDw) (12:12)
+    + Read Section 3.4 of [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
 * Lecture - [Rmarkdown example](../Rmarkdown/FlowControl.html)
 * Bootstrap - [Rmarkdown example](../Rmarkdown/TheBootstrap.html)
 * [Overplotting Examples and possible Solutions](../Rmarkdown/HousingData.html)
@@ -124,7 +129,7 @@ git pull upstream gh-pages
 **Feb 14:**
 
 * Before class:
-    + Skim [_bookdown: Authoring Books and Technical Documents with R Markdown_](https://bookdown.org/yihui/bookdown/)
+    + Refer to [_bookdown: Authoring Books and Technical Documents with R Markdown_](https://bookdown.org/yihui/bookdown/) as needed
 * Reproduce [Writing Assignment](../Rmarkdown/WritingAssignment.html).  Submit your html file to [CrowdGrader](https://www.crowdgrader.org/crowdgrader/venues/view_venue/2745) no later than 5 pm Feb 17.
 
 
