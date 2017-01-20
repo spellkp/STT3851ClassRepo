@@ -25,6 +25,7 @@ gender <- c(rep("Female", 10), rep("Male", 10))
 group <- rep(rep(c("Treatment", "Control"), each = 5), 2)
 worms <- c(1, 2, 2, 10, 7, 16, 10, 10, 7, 17, 3, 5, 9, 10, 6, 31, 26, 28, 13, 47)
 schis <- data.frame(gender, group, worms)
+rm(gender, group, worms)
 head(schis, n = 3)
 schis
 ```
@@ -46,9 +47,15 @@ ACTIVITY
 2. Calculate appropriate summary statistics (e.g., the median, mean, and standard deviation) for each of the four groups.  For the female mice, calculate the difference between the treatment and control means.  Do the same for the male mice.
 
 ```{r ORDER}
+# Classical approach with order()
 with(data = schis, 
 schis[order(gender, group, worms),]
      )
+# Tidyverse Approach
+library(dplyr)
+schis <- schis %>%
+  arrange(gender, group, worms)
+schis
 ```
 
 ```{r STATS}
@@ -61,16 +68,21 @@ tapply(worms, list(gender, group), mean)
 with(data = schis, 
 tapply(worms, list(gender, group), sd)    
      )
+# Tidyverse Approach
+schis %>%
+  group_by(gender, group) %>%
+  summarize(Md = median(worms), Mean = mean(worms), SD = sd(worms), N = n())
 ```
 
 The descriptive analysis in Questions 1 and 2 points to a positive treatment effect: K11777 appears to have reduced the number of parasite worms in this sample.  But descriptive statistics are usually only the first step in ascertaining whether an effect is real; we often conduct a significance test or create a confidence interval to determine if chance alone could explain the effect.
 
-We will introduce the basic concepts of randomization tests in a setting where units (mice in this example) are randomly allocated to a treatment or control group.  Using a significance test, we will decide if an observed treatment effect (the difference between the mean responses in the treatment and control) is "real" or if "random chance alone" could plausibly explain the observed effect.  The null hypothesis states that "random chance alone" is the reason for the observed effect.  In this initial discussion, the alternative hypothesis will be one-sided because we want to show that the true treatment mean($\mu_{treatment}$) is less than the true control mean ($\mu_{control}$).
+We will introduce the basic concepts of randomization tests in a setting where units (mice in this example) are randomly allocated to a treatment or control group.  Using a significance test, we will decide if an observed treatment effect (the difference between the mean responses in the treatment and control) is "real" or if "random chance alone" could plausibly explain the observed effect.  The null hypothesis states that "random chance alone" is the reason for the observed effect.  In this initial discussion, the alternative hypothesis will be one-sided because we want to show that the true treatment mean($\mu_{\text{treatment}}$) is less than the true control mean ($\mu_{\text{control}}$).
 
 Statistical Inference Through a Randomization Test
 ==================================================
 
 Whether they take the form of significance tests or confidence intervals, inferential procedures rest on the **fundamental question for inference:** "What would happen if we did this many times?" Let's unpack this question in the context of the female mice schistosomiasis.  We observed a difference in means of 7.6 = 12 - 4.4 worms between the control and treatment groups.  While we expect that this large difference reflects the effectiveness of the drug, it is possible that chance alone could explain this difference.  This "chance alone" position is usually called the null hypothesis and includes the following assumptions:
+
 * The number of parasitic worms found in the liver naturally varies from mouse to mouse.
 * Whether or not the drug is effective, there clearly is variability in the responses of mice to the infestation of schistosomes.
 * Each group exhibits this variability, and even if the drug is not effective, some mice do better than others.
@@ -78,7 +90,7 @@ Whether they take the form of significance tests or confidence intervals, infere
 
 In this study, the **null hypothesis** is that the treatment has no effect on the average worm count, and it is denoted as 
 
-> $H_0:\mu_{control} = \mu_{treatment}$
+> $H_0:\mu_{\text{control}} = \mu_{\text{treatment}}$
 Another way to write this hypothesis is 
 > $H_0: \text{the treatment has no effect on average worm count}$
 
@@ -103,7 +115,8 @@ The reasoning in the previous activity leads us to the randomization test and an
 
 > **Key Concept:** Assuming that nothing except the random allocation process is creating group differences, the _p_-value of a randomization test is the probability of obtaining a group difference as large as or larger than the group difference actually observed in the experiment.
 
-> **Key Concept:** The calculation of an empirical _p_-value requires these steps:
+> **Key Concept:** The calculation of an empirical _p_-value requires these steps:  
+
 * Repeat the random allocation process a number of times (N times).
 * Record, each time, whether or not the group difference exceeds or is the same as the one observed in the actual experiment (let X be the number of times the group difference exceeds or is the same as the one observed).
 * Compute (X + 1)/(N + 1) to get the _p_-value, the proportion of times the difference exceeds or is the same as the observed difference.
@@ -122,7 +135,7 @@ Two-Sample Permutation Test
 
 **repeat**
 
-  * Draw a resample of size _m_ without replacement.
+  * Draw a resample of size _m_ **without replacement**.
   * Use the remaining _n_ observations for the other sample.
   * Calculate the difference in means or another test statistic that compares samples.
   
@@ -145,16 +158,15 @@ Using Computer Simulations to Conduct a Hypothesis Test
 3. Write code that perform steps 1. and 2. N = 99,999 times.  Compute and report the empirical _p_-value.
 
 4. Create a histogram of the N simulated differences between group means and comment of the shape of the histogram.  
+5. Based on your results from 3. and 4. and assuming the null hypothesis is true, about how frequently do you think you would obtain a mean difference as large as or larger than 7.6 by random allocation alone?
 
-5. Based on your results in Questions 3 and 4 and assuming the null hypothesis is true, about how frequently do you think you would obtain a mean difference as large as or larger than 7.6 by random allocation alone?
-
-6. Does your answer to Question 5 lead you to believe the "chance alone" position (i.e., the null hypothesis that the mean worm count is the same for both the treatment and the control), or does is lead you to believe that K11777 has a positive inhibitory effect on the schistosome worm in female mice?  Explain.
+6. Does your answer from 5. lead you to believe the "chance alone" position (i.e., the null hypothesis that the mean worm count is the same for both the treatment and the control), or does is lead you to believe that K11777 has a positive inhibitory effect on the schistosome worm in female mice?  Explain.
 
 Using R
 ==========
 
 ```{r APPLY}
-ND <- schis[gender=="Female", ]
+ND <- schis[schis$gender=="Female", ]
 ND
 tapply(ND$worms, ND$group, mean)
 # OR
@@ -166,6 +178,16 @@ observed <- ANS1[1] - ANS1[2]
 observed
 names(observed) <- NULL
 observed
+# Tidyverse approach
+ND2 <- schis %>%
+  filter(gender == "Female")
+ND2
+IA <- ND2 %>%
+  group_by(group) %>%
+  summarize(MeanWorms = mean(worms))
+IA
+obs_diff <- IA[1, 2] - IA[2, 2]
+obs_diff
 ```
 Since we will be working with the **worms** variable for females only, we will create a vector holding these values.  Then, we will draw a random sample of size 5 from the numbers 1 through 10 (there are 10 observations).  The worms values corresponding to these positions will be values for the Control group and the remaining ones for the Treatment group.  The mean difference of this permutation will be stored in **result**.  This will be repeated many times.
 
@@ -192,13 +214,28 @@ ys <- c(0, d.res$y[d.res$x>=7.6])
 polygon(xs, ys, col = "red")
 pvalue <- (sum(result >= observed) + 1)/(N + 1) # p-value
 pvalue  # results will vary
+############################################################
+# Yet another approach - 
+ND2
+N <- 10^4 - 1          # number of times to repeat the process
+result2 <- numeric(N)  # space to save the random differences
+set.seed(5)
+for (i in 1:N){
+  # sample of size 5, from 1 to 10, without replacement
+  index <- sample(10, size = 5, replace = FALSE)
+  result2[i] <- mean(ND2$worms[index]) - mean(ND2$worms[-index])
+}
+# Graph Now
 # ggplot2 approach now
 DF <- data.frame(x = result)
-p <- ggplot(data = DF) + geom_density(aes(x = x, y = ..density..), fill = 'pink', alpha = 0.4) + theme_bw()
+p <- ggplot(data = DF) + geom_density(aes(x = x, y = ..density..), fill = 'pink', alpha = 0.4) + 
+  theme_bw()
 p
 x.dens <- density(result)
 df.dens <- data.frame(x = x.dens$x, y = x.dens$y)
-p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + labs(x = expression(bar(x)[Control] - bar(x)[Treatment]), y = '', title = "Randomization Distribution") + theme_bw()
+p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + 
+  labs(x = expression(bar(x)[Control] - bar(x)[Treatment]), y = '', title = "Randomization Distribution") + 
+  theme_bw()
 ```
 
 The code snippet **result >= observed** results in a vector of **TRUE's** and **FALSE's** depending on whether or not the mean difference computed for a resample is greater than the observed mean difference.  **sum(result >= observed)** counts the number of **TRUE's**.  Thus, the computed _p_-value is just the proportion of statistics (including the original) that are as large or larger than the original mean difference. The empirical _p_-value is `r pvalue`.
@@ -271,7 +308,7 @@ The direction of the alternative hypothesis is derived from the research hypothe
 
 We will now make our definition of the _p_-value more general for a wider variety of significance testing situations.  The _p_-value is the probability of observing a group difference as extreme as or more extreme than the group difference actually observed in the sample data, assuming that there is nothing creating group differences except the random allocation process.
 
-This definition is consistent with the earlier definition for one-sided alternatives, as we can interpret _extreme_ to mean either greater than or less than, depending on the direction of the alternative hypothesis.  But in the two-sided case, _extreme_ encompasses both directions.  In the K11777 example, we observed a difference of 7.6 between control and treatment group means.  Thus, the two-sided _p_-value calculation is a count of all instances among the N replications where the randomly allocated mean difference is either as small as or smaller than -7.6 worms ($\leq -7.6$) or as great or greater than 7.6 worms ($\geq 7.6$).  This is often written as $|diff| \geq 7.6$.
+This definition is consistent with the earlier definition for one-sided alternatives, as we can interpret _extreme_ to mean either greater than or less than, depending on the direction of the alternative hypothesis.  But in the two-sided case, _extreme_ encompasses both directions.  In the K11777 example, we observed a difference of 7.6 between control and treatment group means.  Thus, the two-sided _p_-value calculation is a count of all instances among the N replications where the randomly allocated mean difference is either as small as or smaller than -7.6 worms ($\leq -7.6$) or as great or greater than 7.6 worms ($\geq 7.6$).  This is often written as $|\text{diff}| \geq 7.6$.
 
 Activity: A two-sided hypothesis test
 ======================================
@@ -279,7 +316,7 @@ Activity: A two-sided hypothesis test
   * Run the simulation study again to fine the empirical _p_-value for a two-sided hypothesis test to determine if there is a difference between the treatment and control group means for female mice.
 
 ```{r TWOST}
-ND <- schis[gender=="Female", ]
+ND <- schis[schis$gender=="Female", ]
 ND
 tapply(ND$worms, ND$group, mean)
 # OR
