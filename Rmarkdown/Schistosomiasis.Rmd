@@ -276,12 +276,14 @@ pvalue <- sum(means >= OBS)/nn
 pvalue
 # 7/252
 DF <- data.frame(x = means)
-p <- ggplot(data = DF) + geom_density(aes(x = x, y = ..density..), fill = "pink", 
-    alpha = 0.4) + theme_bw()
+p <- ggplot(data = DF) + 
+  geom_density(aes(x = x, y = ..density..), fill = "pink", alpha = 0.4) + 
+  theme_bw()
 p
 x.dens <- density(means)
 df.dens <- data.frame(x = x.dens$x, y = x.dens$y)
-p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + labs(x = '', y = '') 
+p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + 
+  labs(x = '', y = '') 
 # Another approach ....
 #
 P3 <- t(SRS(DATA, n=5))
@@ -358,8 +360,10 @@ p <- ggplot(data = DF) +
 p
 x.dens <- density(result)
 df.dens <- data.frame(x = x.dens$x, y = x.dens$y)
-p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + labs(x = '', y = '') + geom_area(data = subset(df.dens, x <= -7.6 & x >= min(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) +
-  labs(x = expression(bar(x)[Control] - bar(x)[Treatment]), y = '', title = "Randomization Distribution")
+p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + 
+  geom_area(data = subset(df.dens, x <= -7.6 & x >= min(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) +
+  labs(x = expression(bar(x)[Control] - bar(x)[Treatment]), y = '', title = "Randomization Distribution") + 
+  theme(plot.title = element_text(hjust = 0.5)) 
 ```
 
 The empirical _p_-value for a two-sided test is `r pvalue`.
@@ -441,9 +445,10 @@ p <- ggplot(data = DF) +
 p
 x.dens <- density(result)
 df.dens <- data.frame(x = x.dens$x, y = x.dens$y)
-p + geom_area(data = subset(df.dens, x >= obsDiff & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + labs(x = '', y = '') +
-  labs(x = expression(bar(x)[Job] - bar(x)[LaidOff]), y = '', title = "Randomization Distribution")
-pvalue <- (sum(result >= obsDiff) + 1)/(N + 1) # p-value
+p + geom_area(data = subset(df.dens, x >= obsDiff & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + 
+  labs(x = expression(bar(x)[Job] - bar(x)[LaidOff]), y = '', title = "Randomization Distribution") + 
+  theme(plot.title = element_text(hjust = 0.5)) # Center the title
+pvalue <- (sum(result >= obsDiff) + 1)/(N + 1)  # p-value
 pvalue  # results will vary
 ```
 The _p_-value is `r pvalue`.
@@ -477,8 +482,9 @@ p <- ggplot(data = DF) +
 p
 x.dens <- density(MedianDiff)
 df.dens <- data.frame(x = x.dens$x, y = x.dens$y)
-p + geom_area(data = subset(df.dens, x >= obsDiffMedian & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + labs(x = '', y = '') +
-  labs(x = expression(tilde(x)[Job] - tilde(x)[LaidOff]), y = '', title = "Randomization Distribution")
+p + geom_area(data = subset(df.dens, x >= obsDiffMedian & x <= max(DF$x)), aes(x = x, y = y), fill = 'blue', alpha = 0.4) + 
+  labs(x = expression(tilde(x)[Job] - tilde(x)[LaidOff]), y = '', title = "Randomization Distribution") + 
+  theme(plot.title = element_text(hjust = 0.5))  # Center title
 #######
 pvalueMED <- (sum(MedianDiff >= obsDiffMedian) + 1)/(N + 1) # p-value
 pvalueMED  # results will vary
