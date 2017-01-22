@@ -157,7 +157,8 @@ Using Computer Simulations to Conduct a Hypothesis Test
 
 3. Write code that perform steps 1. and 2. N = 99,999 times.  Compute and report the empirical _p_-value.
 
-4. Create a histogram of the N simulated differences between group means and comment of the shape of the histogram.  
+4. Create a histogram of the N simulated differences between group means and comment of the shape of the histogram. 
+
 5. Based on your results from 3. and 4. and assuming the null hypothesis is true, about how frequently do you think you would obtain a mean difference as large as or larger than 7.6 by random allocation alone?
 
 6. Does your answer from 5. lead you to believe the "chance alone" position (i.e., the null hypothesis that the mean worm count is the same for both the treatment and the control), or does is lead you to believe that K11777 has a positive inhibitory effect on the schistosome worm in female mice?  Explain.
@@ -254,7 +255,7 @@ Explain what each line of the following code is doing.
 ```{r EXPLAIN, message = FALSE, warning = FALSE}
 # PROGRAMMING IS THE BEST WAY TO DEBUG YOUR THINKING!
 # Theoretical Answer
-require(PASWR)
+library(PASWR2)
 DATA <- c(1, 2, 2, 10, 7, 16, 10, 10, 7, 17)
 DATA
 OBS <- mean(DATA[6:10]) - mean(DATA[1:5])
@@ -286,8 +287,8 @@ p + geom_area(data = subset(df.dens, x >= 7.6 & x <= max(DF$x)), aes(x = x, y = 
   labs(x = '', y = '') 
 # Another approach ....
 #
-P3 <- t(SRS(DATA, n=5))
-P2 <- t(SRS(DATA, n=5))
+P3 <- t(srs(DATA, n = 5))
+P2 <- t(srs(DATA, n = 5))
 # Note need to reorder the P2 values
 P2R <- P2[, 252:1]
 apply(P2R, 2, mean)
