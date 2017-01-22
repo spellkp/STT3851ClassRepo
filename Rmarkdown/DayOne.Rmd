@@ -124,7 +124,7 @@ pvalue <- pt(ts, nu, lower = FALSE)
 pvalue
 ```
 
-The $P(t_{\nu} > `r ts`) = `r pvalue`.$
+The $P(t_{\nu} = t_{`r nu`} \ge `r ts`) = `r pvalue`.$
 
 ```{r}
 t.test(HeightIn ~ Sex, data = DF, alternative = "less")
