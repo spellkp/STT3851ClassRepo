@@ -1,7 +1,7 @@
 ---
 title: "Day One"
 author: "Alan Arnholt"
-date: '`r format(Sys.time(), "%b %d, %Y")`'
+date: Jan 17, 2017
 output: html_document
 ---
 
@@ -100,7 +100,7 @@ nu
 ## Base R
 
 ```{r}
-curve(dt(x, nu$DegreesOfFreedom), from = -4, to = 4, n = 500, col = "purple")
+curve(dt(x, nu$DegreesOfFreedom), from = -4, to = 4, n = 500, col = "purple", ylab = "")
 ```
 
 ## Curve with `ggplot2`
@@ -109,7 +109,8 @@ curve(dt(x, nu$DegreesOfFreedom), from = -4, to = 4, n = 500, col = "purple")
 ggplot(data.frame(x = c(-4, 4)), aes(x=x)) +
   stat_function(fun = dt, args = list(df = nu$DegreesOfFreedom)) + 
   theme_bw() + 
-  geom_vline(xintercept = TS$TestStatistic, color = "purple")
+  geom_vline(xintercept = TS$TestStatistic, color = "purple") + 
+  geom_hline(yintercept = 0, color = "black")
 ```
 
 ## $p$-value
