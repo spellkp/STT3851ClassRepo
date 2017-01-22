@@ -72,6 +72,11 @@ Assume $\sigma_X = 5$ and $\sigma_Y=12$.
 
 ```{r fig.align = "center"}
 tapply(CALCULUS$score, CALCULUS$calculus, mean)
+# TidyVerse
+library(dplyr)
+CALCULUS %>%
+  group_by(calculus) %>%
+  summarize(MeanScore = mean(score))
 # sigX = 5, sigY = 12
 X <- CALCULUS$score[CALCULUS$calculus == "Yes"]
 Y <- CALCULUS$score[CALCULUS$calculus == "No"]
@@ -96,7 +101,7 @@ t.test(score ~ calculus, data = CALCULUS, alternative = "less")
 ## Draw $t_{20.585}$
 
 ```{r}
-curve(dt(x, 20.585), from = -4, to = 4, n = 500, col = "blue")
+curve(dt(x, 20.585), from = -4, to = 4, n = 500, col = "blue", ylab = "")
 curve(dt(x, 2), from = -4, to = 4, n = 500, col = "purple", add = TRUE)
 curve(dnorm(x), from = -4, to = 4, n = 500, col = "pink", add = TRUE)
 ```
@@ -147,8 +152,22 @@ for(i in 1:R){
   TS[i] <- xbar1 - xbar2
 }
 hist(TS, breaks = "Scott")
+# With ggplot2 (note have to pass Data Frame)
+DF <- data.frame(x = TS)
+library(ggplot2)
+ggplot(data = DF, aes(x = x)) + 
+  geom_density(fill = "purple", alpha = 0.2) + 
+  theme_bw()
+#
 CI <- quantile(TS, probs = c(0.025, 0.975))  # 95% Percentile Boostrap CI
 CI 
+#
+p <- ggplot(data = DF, aes(x = x, y = ..density..)) + 
+  geom_density(fill = "red", alpha = 0.8) + 
+  theme_bw()
+x.dens <- density(TS)
+df.dens <- data.frame(x = x.dens$x, y = x.dens$y)
+p + geom_area(data = subset(df.dens, x >= CI[1] & x <= CI[2]), aes(x = x, y = y), fill = "blue", alpha = .3)
 ```
 
 ## Simple Linear Regression
