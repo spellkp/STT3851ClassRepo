@@ -169,5 +169,5 @@ ggplot(data = data.frame(x = BSD), aes(x = x)) +
   geom_density(fill = "lightblue") +
   theme_bw() + 
   labs(x = substitute(paste(bar(x)[1],"*", -bar(x)[2],"*")), title = "Bootstrap Distribution")
-quantile(BSD, probs = c(0.05, 0.90))
+quantile(BSD, probs = c(0.05, 0.95))
 ```
