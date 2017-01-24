@@ -18,7 +18,7 @@ Sex <- c(rep("Male", 5), rep("Female", 5))
 Name <- c("Tanner", "Kory", "Chandler", "Elliot", "Eddie",
           "Emma", "Jacqueline", "Catherine", "Andi", "Emily")
 DF <- data.frame(Name = Name, HeightIn = Height, WingSpan = WingSpan, Sex = Sex)
-rm(Name, HeightIn, WingSpan, Sex)
+rm(Name, Height, WingSpan, Sex)
 str(DF)
 DF$Name <- as.character(DF$Name)
 str(DF)
@@ -142,7 +142,8 @@ epv <- (sum(PTS >= ts) + 1)/(N + 1)
 epv
 ggplot(data = data.frame(x = PTS), aes(x = x)) +
   geom_density(fill = "purple") + 
-  theme_bw()
+  theme_bw() + 
+  labs(x = expression(bar(x)[Male]-bar(x)[Female]), title = "Randomization Distribution")
 ```
 
 ## Bootstrapping Percentile CI
@@ -166,6 +167,7 @@ for(i in 1:B){
 }
 ggplot(data = data.frame(x = BSD), aes(x = x)) +
   geom_density(fill = "lightblue") +
-  theme_bw()
+  theme_bw() + 
+  labs(x = substitute(paste(bar(x)[1],"*", -bar(x)[2],"*")), title = "Bootstrap Distribution")
 quantile(BSD, probs = c(0.05, 0.90))
 ```
