@@ -1,9 +1,9 @@
 \documentclass[final]{beamer}
 \usefonttheme{serif}
-\mode<presentation>{\usetheme{ASU}}
+\mode<presentation>{\usetheme{ASU3}}
 \usepackage{amsmath, amsfonts, amssymb, pxfonts, eulervm, xspace, enumerate, hyperref, color, bookmark}
 \usepackage{graphicx}
-\usepackage[orientation=landscape, size=custom, width =182.88, height=121.92, scale=2, debug]{beamerposter}
+\usepackage[orientation=landscape, size=custom, width =152.4, height=106.68, scale=1.4, debug]{beamerposter}
 % \usepackage{natbib}
 
 \usecolortheme{rose}
@@ -13,7 +13,7 @@
 
 %-- Header and footer information ----------------------------------
 \newcommand{\footright}{\href{https://github.com/STAT-ATA-ASU/STT3851Spring2016}{https://github.com/STAT-ATA-ASU/STT3851Spring2016}}
-\newcommand{\footleft}{\href{mailto:arnholtat@appstate.edu}{Faculty Advisor: Alan Arnholt}}
+\newcommand{\footleft}{\href{mailto:arnholtat@appstate.edu}{Faculty Advisors: Eric Marland \& Alan Arnholt}}
 
 \def\conference{King County House Price Prediction Project}
 \title{Your Descriptive Title Here}
@@ -61,8 +61,11 @@ housedataT$yr_renovated <- as.Date(ISOdate(housedataT$yr_renovated, 9, 1))  # La
 housedataT <- housedataT[, -1]
 @
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-- Column 1 ---------------------------------------------------
-\begin{column}{0.31\linewidth}
+\begin{column}{0.23\linewidth}
 \begin{minipage}[t][.955\textheight]{\linewidth} 
 
 %-- Block 1-1
@@ -114,12 +117,68 @@ Note: Variables are described in the Variable Table handout.
 \end{minipage}
 \end{column}%1
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-- Column 2 ---------------------------------------------------
 
-\begin{column}{0.31\linewidth}
+\begin{column}{0.23\linewidth}
 \begin{minipage}[t][.955\textheight]{\linewidth} 
 
 %-- Block 2-1
+\vspace{0ex}
+\begin{block}{Overview}
+\begin{itemize}
+\item On May 8, 2012, North Carolina voters approved Amendment One.  This poster examines four different models used to predict North Carolina county voting behavior.  
+\item To ensure accurate predictive power for future observations, the data are split into a training set (80\%) and a test set (20\%). 
+\item Root mean squared error of the test set is used as a measure of model adequacy.  
+\item All computations and graphs are created with the open source software \texttt{R} \cite{R-base}. 
+\end{itemize}
+\vspace{0ex}
+\end{block}
+\vfill
+
+%-- Block 2-2
+\begin{block}{K-Fold Cross-Validation}
+\begin{itemize}
+\item Cross validation is the simplest and most widely used method for estimating prediction error \cite{JF09}.  This method directly estimates the expected extra-sample error, $Err = E[{L(Y, \hat{f\,}\!(X))}]$.  In this work, the loss function, $L$, is the square root of the average squared error loss.
+\vspace{2ex}
+\item The data in this project is split into $K=10$ equal sized parts.  The cross-validation estimate of the prediction error is $$CV(\hat{f\,}\!)=\frac{1}{N}\sum_{i=1}^{N}L(y_i, \hat{f\,}\!^{-K(i)}(x_i)),$$
+where $\hat{f\,}\!^{-K}(x)$ denotes the fitted function with the $K$\textsuperscript{th} part of the data removed.
+\end{itemize}
+\vspace{0ex}
+\vfill
+\end{block}
+\vfill
+
+%-- Block 2-3
+\begin{block}{Basic Models Used}
+
+\begin{enumerate}[I.]
+\item Least Squares Regression
+\vspace{0ex}
+
+Note: Variables are described in the Variable Table handout.
+\begin{enumerate}[a.]
+\item Model from \cite{DE12} applied to Training data (\textcolor{blue}{mod1A}) --- Percent voting for Amendment One is modeled using the predictors pct18.24, medinc, pctb, mccain08, evanrate, pctrural, and pctba. 
+\item Our OLS model applied to Training data (\textcolor{blue}{mod1B}) --- Percent voting for Amendment One is modeled using the predictors obama08, pctrural, pctw, pctd, pctb, log(pct18.24), log(pctcolenrol), pctfm, log(pctfd), pctown,  medinc, $\text{medinc}^2$, evanrate, $\text{evanrate}^2$, pctfb, $\text{pctfb}^2$, log(pctstud), and log(colden).
+\end{enumerate}
+\item Cross validated, $K = 10$, and pruned, $n_{\text{leaves}}=4$, regression tree \cite{JF09} (\textcolor{blue}{mod2})
+\item Random Forest built from, $n_{\text{trees}} = 5000 $, \cite{AL02} (\textcolor{blue}{mod3})
+\end{enumerate}
+\vspace{0ex}
+
+\end{block}
+\vfill
+
+\end{minipage}
+\end{column}%2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--Column 3 ----------------------------------------------------
+
+\begin{column}{0.23\linewidth}
+\begin{minipage}[t][.955\textheight]{\linewidth} 
+
+%-- Block 3-1
 \vspace{0ex}
 \begin{block}{A Pink Histogram}
 \vspace{0ex}
@@ -130,7 +189,7 @@ hist(rnorm(1000), col = "pink")
 \end{block}
 \vfill
 
-%-- Block 2-2
+%-- Block 3-2
 \vspace{0ex}
 \begin{block}{King County Real Estate}
 \vspace{0ex}
@@ -147,13 +206,14 @@ ggmap(KingMap) +
 \vfill
 
 \end{minipage}
-\end{column}%2
+\end{column}%3
 
-%-- Column 3 ---------------------------------------------------
-\begin{column}{0.31\linewidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-- Column 4 ---------------------------------------------------
+\begin{column}{0.23\linewidth}
 \begin{minipage}[t][.955\textheight]{\linewidth} 
 
-%-- Block 3-1
+%-- Block 4-1
 \vspace{0ex}
 \begin{block}{Random Forest Variable Importance}
 \vspace{0ex}
@@ -165,7 +225,7 @@ hist(rnorm(1000), col = "green")
 \end{block}
 \vfill
 
-%-- Block 3-2
+%-- Block 4-2
 \begin{block}{Prediction Errors}
 <<label = "HIST3", echo = FALSE, fig.height = 3.5>>=
 hist(rnorm(1000), col = "purple")
@@ -175,7 +235,7 @@ hist(rnorm(1000), col = "purple")
 \end{block}
 \vfill
 
-%-- Block 3-3
+%-- Block 4-3
 \begin{block}{Further Directions}
 \begin{itemize}
 \item Use the models developed in this poster to predict county votes for states that have had similar marriage amendments such as South Carolina, Wisconsin, South Dakota, Florida, Idaho, Alabama, Utah, Michigan, Texas, Arkansas, Louisiana, Kansas, Kentucky, Ohio, and Nebraska. 
@@ -187,7 +247,7 @@ hist(rnorm(1000), col = "purple")
 \end{block}
 \vfill
 
-%-- Block 3-4
+%-- Block 4-4
 \begin{block}{References}
 \footnotesize
 \setbeamertemplate{bibliography item}[text]
@@ -205,7 +265,7 @@ write_bib(c(.packages()), file = 'knitr-packages.bib')
 \vfill
 
 \end{minipage}
-\end{column}%3
+\end{column}%4
 
 
 
