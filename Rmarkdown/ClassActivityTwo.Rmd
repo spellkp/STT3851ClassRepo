@@ -73,3 +73,10 @@ ggplot(data = GDF, aes(x = x)) +
   stat_function(fun = dt, args = list(df = 47.087), color = "red") + 
   geom_vline(xintercept = c(-tobs, tobs), col = "purple")
 ```
+
+
+### Session Information {-}
+
+```{r}
+sessionInfo()
+```
