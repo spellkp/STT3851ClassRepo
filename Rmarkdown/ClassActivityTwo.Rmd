@@ -80,3 +80,6 @@ ggplot(data = GDF, aes(x = x)) +
 ```{r}
 sessionInfo()
 ```
+
+
+
